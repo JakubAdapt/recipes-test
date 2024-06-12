@@ -20,12 +20,8 @@ export default async function Home() {
   const page = await getPage();
   const hero = page.hero;
 
-  console.log(hero);
-
   return (
     <main className="">
-      <h1>{page.internalTitle}</h1>
-
       {hero && <Hero hero={hero} />}
 
       <Link href="/recipes">Go to Recipes Page</Link>

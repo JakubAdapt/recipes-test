@@ -4,12 +4,17 @@ import {
   TypeRecipeSkeleton,
 } from "@/types/contentful/generated-types";
 import RecipeCard from "@/app/components/RecipeCard";
+import Hero from "@/app/components/Hero";
 
 async function getPage() {
-  const res = await contentFulClient.getEntries<TypeLandingPageSkeleton>({
-    content_type: "landingPage",
-    "fields.slug": "recipes",
-  });
+  const res =
+    await contentFulClient.withoutUnresolvableLinks.getEntries<TypeLandingPageSkeleton>(
+      {
+        content_type: "landingPage",
+        "fields.slug": "recipes",
+        include: 2,
+      }
+    );
 
   return res.items[0].fields;
 }
@@ -26,9 +31,11 @@ export default async function RecipesPage() {
   const page = await getPage();
   const recipes = await getRecipes();
 
+  const hero = page.hero;
+
   return (
     <div>
-      <h1>{page.internalTitle}</h1>
+      {hero && <Hero hero={hero} />}
 
       {recipes.map((recipe) => (
         <RecipeCard key={recipe.sys.id} recipe={recipe} />
