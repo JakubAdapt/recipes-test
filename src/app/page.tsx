@@ -1,7 +1,8 @@
 import { contentFulClient } from "@/services/contentful";
 import { TypeLandingPageSkeleton } from "@/types/contentful/generated-types";
 import Hero from "@/app/components/Hero";
-import Content from "./components/Content";
+import Content from "@/app/components/Content";
+import CategoriesList from "@/app/components/CategoriesList";
 
 async function getPage() {
   const res =
@@ -23,6 +24,8 @@ export default async function Home() {
   return (
     <main className="space-y-4">
       {hero && <Hero data={hero} />}
+
+      <CategoriesList />
 
       {sections && <Content content={sections} />}
     </main>

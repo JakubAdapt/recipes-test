@@ -21,9 +21,13 @@ const Content = ({ content }: Props) => {
     }
   });
 
-  return displayContent.map((content, index) => (
-    <div key={index}>{content}</div>
-  ));
+  return (
+    <div className="px-4">
+      {displayContent.map((content, index) => (
+        <div key={index}>{content}</div>
+      ))}
+    </div>
+  );
 };
 
 export default Content;

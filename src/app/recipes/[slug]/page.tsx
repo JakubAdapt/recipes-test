@@ -31,9 +31,21 @@ export default async function RecipePage({ params }: PageParams) {
 
       <h1>{recipe.name}</h1>
 
+      <br />
+      <hr />
+      <br />
+
       <p>{documentToReactComponents(recipe.ingredients)}</p>
 
+      <br />
+      <hr />
+      <br />
+
       <p>{documentToReactComponents(recipe.instruction)}</p>
+
+      <br />
+      <hr />
+      <br />
 
       <p>{recipe.time} minutes</p>
 
