@@ -1,4 +1,4 @@
-import { contentFulClient } from "@/lib/contentful";
+import { contentFulClient } from "@/services/contentful";
 import {
   TypeLandingPageSkeleton,
   TypeRecipeSkeleton,
@@ -35,10 +35,10 @@ export default async function RecipesPage() {
 
   return (
     <div>
-      {hero && <Hero hero={hero} />}
+      {hero && <Hero data={hero} />}
 
       {recipes.map((recipe) => (
-        <RecipeCard key={recipe.sys.id} recipe={recipe} />
+        <RecipeCard key={recipe.sys.id} data={recipe} />
       ))}
     </div>
   );

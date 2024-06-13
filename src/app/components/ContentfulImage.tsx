@@ -1,11 +1,10 @@
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 
-type Props = {
-  alt: string;
+type Props = ImageProps & {
   src: string;
 };
 
-const ContentfulImage = ({ alt, src }: Props) => {
+const ContentfulImage = ({ alt, src, ...props }: Props) => {
   return (
     <Image
       src={src.replace("//", "https://")}
@@ -13,7 +12,8 @@ const ContentfulImage = ({ alt, src }: Props) => {
       width={0}
       height={0}
       sizes="100vw"
-      style={{ width: "auto", height: "100%" }}
+      style={{ width: "100%", height: "100%" }}
+      {...props}
       // loader={() => `${src}?w=${width}&q=75`}
     />
   );

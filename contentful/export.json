@@ -1000,7 +1000,7 @@
         "id": "57NCfK7tz67JOa9MxBtq4k",
         "type": "Entry",
         "createdAt": "2024-06-10T08:45:53.515Z",
-        "updatedAt": "2024-06-10T10:45:50.474Z",
+        "updatedAt": "2024-06-11T11:30:41.851Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1008,8 +1008,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 50,
-        "publishedAt": "2024-06-10T10:45:50.474Z",
+        "publishedVersion": 52,
+        "publishedAt": "2024-06-11T11:30:41.851Z",
         "firstPublishedAt": "2024-06-10T09:19:08.335Z",
         "createdBy": {
           "sys": {
@@ -1025,8 +1025,8 @@
             "id": "6n5zMiaRUNYJBkNMAQ7pPU"
           }
         },
-        "publishedCounter": 4,
-        "version": 51,
+        "publishedCounter": 5,
+        "version": 53,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1443,7 +1443,7 @@
           }
         },
         "time": {
-          "en-US": 45
+          "en-US": 60
         },
         "level": {
           "en-US": "Easy"
@@ -1818,7 +1818,7 @@
         "id": "28QYLjWmqsQr7deXD1jLZt",
         "type": "Entry",
         "createdAt": "2024-06-10T09:38:00.955Z",
-        "updatedAt": "2024-06-10T09:39:33.117Z",
+        "updatedAt": "2024-06-13T08:10:27.105Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1826,8 +1826,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 4,
-        "publishedAt": "2024-06-10T09:39:33.117Z",
+        "publishedVersion": 8,
+        "publishedAt": "2024-06-13T08:10:27.105Z",
         "firstPublishedAt": "2024-06-10T09:39:33.117Z",
         "createdBy": {
           "sys": {
@@ -1843,8 +1843,8 @@
             "id": "6n5zMiaRUNYJBkNMAQ7pPU"
           }
         },
-        "publishedCounter": 1,
-        "version": 5,
+        "publishedCounter": 3,
+        "version": 9,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1873,7 +1873,7 @@
           "en-US": "Home Page"
         },
         "slug": {
-          "en-US": "home-page"
+          "en-US": "home"
         },
         "hero": {
           "en-US": {
@@ -1883,6 +1883,17 @@
               "id": "36PWAOs5Aqvvz7nX12cLDq"
             }
           }
+        },
+        "sections": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "iDy3AFiB5ePjHqv2LfcMp"
+              }
+            }
+          ]
         }
       }
     },
@@ -1969,6 +1980,716 @@
               "id": "4FOBFUCRJvpEjZLNYjIgfG"
             }
           }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "qi0vopslfglf"
+          }
+        },
+        "id": "3TQunAJGeAoal0EcMkGJgH",
+        "type": "Entry",
+        "createdAt": "2024-06-11T11:15:52.327Z",
+        "updatedAt": "2024-06-11T11:29:55.769Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 30,
+        "publishedAt": "2024-06-11T11:29:55.769Z",
+        "firstPublishedAt": "2024-06-11T11:29:55.769Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 31,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "automationTags": [
+        ],
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "recipe"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/qi0vopslfglf/environments/master/entries/3TQunAJGeAoal0EcMkGJgH"
+      },
+      "fields": {
+        "internalTitle": {
+          "en-US": "Fajita"
+        },
+        "name": {
+          "en-US": "Fajita"
+        },
+        "slug": {
+          "en-US": "fajita"
+        },
+        "image": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "oDUvjGaRDwn1I0lncakfF"
+            }
+          }
+        },
+        "ingredients": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "marks": [
+                            ],
+                            "value": "Chicken breast",
+                            "nodeType": "text"
+                          }
+                        ],
+                        "nodeType": "paragraph"
+                      }
+                    ],
+                    "nodeType": "list-item"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "marks": [
+                            ],
+                            "value": "Red, yellow, green pepper",
+                            "nodeType": "text"
+                          }
+                        ],
+                        "nodeType": "paragraph"
+                      }
+                    ],
+                    "nodeType": "list-item"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "marks": [
+                            ],
+                            "value": "Onion",
+                            "nodeType": "text"
+                          }
+                        ],
+                        "nodeType": "paragraph"
+                      }
+                    ],
+                    "nodeType": "list-item"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "marks": [
+                            ],
+                            "value": "Tortillas",
+                            "nodeType": "text"
+                          }
+                        ],
+                        "nodeType": "paragraph"
+                      }
+                    ],
+                    "nodeType": "list-item"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "marks": [
+                            ],
+                            "value": "C",
+                            "nodeType": "text"
+                          },
+                          {
+                            "data": {
+                            },
+                            "marks": [
+                            ],
+                            "value": "ream",
+                            "nodeType": "text"
+                          }
+                        ],
+                        "nodeType": "paragraph"
+                      }
+                    ],
+                    "nodeType": "list-item"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "marks": [
+                            ],
+                            "value": "G",
+                            "nodeType": "text"
+                          },
+                          {
+                            "data": {
+                            },
+                            "marks": [
+                            ],
+                            "value": "uacamole",
+                            "nodeType": "text"
+                          }
+                        ],
+                        "nodeType": "paragraph"
+                      }
+                    ],
+                    "nodeType": "list-item"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "marks": [
+                            ],
+                            "value": "Spices: chili, cumin, paprika, garlic, oregano, salt, and pepper",
+                            "nodeType": "text"
+                          }
+                        ],
+                        "nodeType": "paragraph"
+                      }
+                    ],
+                    "nodeType": "list-item"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "marks": [
+                            ],
+                            "value": "Optionally feta",
+                            "nodeType": "text"
+                          }
+                        ],
+                        "nodeType": "paragraph"
+                      }
+                    ],
+                    "nodeType": "list-item"
+                  }
+                ],
+                "nodeType": "unordered-list"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "instruction": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Step 1",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "heading-3"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Rub the chicken breast with spices, set aside for 30 minutes or in the fridge for longer.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Step 2",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "heading-3"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Fry the chicken breast a little in the pan.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Step 3",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "heading-3"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Grease an ovenproof dish with olive oil and add mixed vegetables with fried meat and spices.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Step 4",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "heading-3"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Bake in the oven until it is ready.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "time": {
+          "en-US": 60
+        },
+        "level": {
+          "en-US": "Easy"
+        },
+        "category": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "2HYVezCnbK3LkntR3XyhJw"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "qi0vopslfglf"
+          }
+        },
+        "id": "1sRg05bu00io0QSAKvRQWy",
+        "type": "Entry",
+        "createdAt": "2024-06-11T11:41:10.176Z",
+        "updatedAt": "2024-06-12T11:31:49.343Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2024-06-12T11:31:49.343Z",
+        "firstPublishedAt": "2024-06-11T11:41:26.821Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "automationTags": [
+        ],
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "landingPage"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/qi0vopslfglf/environments/master/entries/1sRg05bu00io0QSAKvRQWy"
+      },
+      "fields": {
+        "internalTitle": {
+          "en-US": "Recipes Page"
+        },
+        "slug": {
+          "en-US": "recipes"
+        },
+        "hero": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "3y4unF9HMXkdReEDR9Lr7X"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "qi0vopslfglf"
+          }
+        },
+        "id": "3y4unF9HMXkdReEDR9Lr7X",
+        "type": "Entry",
+        "createdAt": "2024-06-12T11:30:17.894Z",
+        "updatedAt": "2024-06-12T11:31:35.058Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2024-06-12T11:31:35.058Z",
+        "firstPublishedAt": "2024-06-12T11:31:35.058Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "automationTags": [
+        ],
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "hero"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/qi0vopslfglf/environments/master/entries/3y4unF9HMXkdReEDR9Lr7X"
+      },
+      "fields": {
+        "internalTitle": {
+          "en-US": "Recipes Page Hero"
+        },
+        "heading": {
+          "en-US": "Here you can find the list of all recipes"
+        },
+        "image": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1NKdaolSfPyiIRIKTOXpxE"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "qi0vopslfglf"
+          }
+        },
+        "id": "iDy3AFiB5ePjHqv2LfcMp",
+        "type": "Entry",
+        "createdAt": "2024-06-13T08:09:07.121Z",
+        "updatedAt": "2024-06-13T08:10:09.218Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2024-06-13T08:10:09.218Z",
+        "firstPublishedAt": "2024-06-13T08:10:09.218Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "automationTags": [
+        ],
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "button"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/qi0vopslfglf/environments/master/entries/iDy3AFiB5ePjHqv2LfcMp"
+      },
+      "fields": {
+        "internalTitle": {
+          "en-US": "Show all recipes"
+        },
+        "label": {
+          "en-US": "Show all recipes"
+        },
+        "link": {
+          "en-US": "/recipes"
         }
       }
     }
@@ -2642,6 +3363,156 @@
             },
             "fileName": "DALL·E 2024-06-07 10.38.14 - A visually appealing plate of classic Italian carbonara pasta served on a white plate. The dish features perfectly cooked spaghetti coated in a creamy.png",
             "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "qi0vopslfglf"
+          }
+        },
+        "id": "oDUvjGaRDwn1I0lncakfF",
+        "type": "Asset",
+        "createdAt": "2024-06-11T11:29:12.604Z",
+        "updatedAt": "2024-06-11T11:29:45.865Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2024-06-11T11:29:45.865Z",
+        "firstPublishedAt": "2024-06-11T11:29:45.865Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/qi0vopslfglf/environments/master/assets/oDUvjGaRDwn1I0lncakfF"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Fajita"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/qi0vopslfglf/oDUvjGaRDwn1I0lncakfF/b3f1427c7f2b9f4da9f36b598359170b/fajita.jpeg",
+            "details": {
+              "size": 208327,
+              "image": {
+                "width": 1333,
+                "height": 2000
+              }
+            },
+            "fileName": "fajita.jpeg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "qi0vopslfglf"
+          }
+        },
+        "id": "1NKdaolSfPyiIRIKTOXpxE",
+        "type": "Asset",
+        "createdAt": "2024-06-12T11:31:12.146Z",
+        "updatedAt": "2024-06-12T11:31:30.252Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2024-06-12T11:31:30.252Z",
+        "firstPublishedAt": "2024-06-12T11:31:30.252Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6n5zMiaRUNYJBkNMAQ7pPU"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/qi0vopslfglf/environments/master/assets/1NKdaolSfPyiIRIKTOXpxE"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Recipes"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/qi0vopslfglf/1NKdaolSfPyiIRIKTOXpxE/2161f308cb930d6d47084f269b4c88a6/recipes.jpeg",
+            "details": {
+              "size": 205037,
+              "image": {
+                "width": 1400,
+                "height": 933
+              }
+            },
+            "fileName": "recipes.jpeg",
+            "contentType": "image/jpeg"
           }
         }
       }

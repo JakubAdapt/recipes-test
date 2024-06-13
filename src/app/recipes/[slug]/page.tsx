@@ -1,5 +1,6 @@
 import ContentfulImage from "@/app/components/ContentfulImage";
-import { contentFulClient } from "@/lib/contentful";
+import { contentFulClient } from "@/services/contentful";
+import { PageParams } from "@/types/PageParams";
 import { TypeRecipeSkeleton } from "@/types/contentful/generated-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
@@ -16,11 +17,7 @@ async function getRecipe(slug: string) {
   return res.items[0].fields;
 }
 
-export default async function RecipePage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function RecipePage({ params }: PageParams) {
   const recipe = await getRecipe(params.slug);
 
   return (
