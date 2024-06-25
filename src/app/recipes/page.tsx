@@ -20,9 +20,12 @@ async function getPage() {
 }
 
 async function getRecipes() {
-  const res = await contentFulClient.getEntries<TypeRecipeSkeleton>({
-    content_type: "recipe",
-  });
+  const res =
+    await contentFulClient.withoutUnresolvableLinks.getEntries<TypeRecipeSkeleton>(
+      {
+        content_type: "recipe",
+      }
+    );
 
   return res.items;
 }
@@ -37,9 +40,11 @@ export default async function RecipesPage() {
     <div>
       {hero && <Hero data={hero} />}
 
-      {recipes.map((recipe) => (
-        <RecipeCard key={recipe.sys.id} data={recipe} />
-      ))}
+      <div className="space-y-3">
+        {recipes.map((recipe) => (
+          <RecipeCard key={recipe.sys.id} data={recipe} />
+        ))}
+      </div>
     </div>
   );
 }

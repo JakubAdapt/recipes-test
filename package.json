@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     "contentful-export-types": "dotenv expose-env -- contentful space export --config contentful/export-config.json --management-token %CONTENTFUL_CODEGEN_TOKEN% --space-id %CONTENTFUL_SPACE_ID%",
     "contentful-generate-types": "cf-content-types-generator --v10 contentful/export.json --out src/types/contentful/generated-types"
   },

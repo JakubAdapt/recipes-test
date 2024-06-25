@@ -1,5 +1,6 @@
 import { contentFulClient } from "@/services/contentful";
 import { TypeCategorySkeleton } from "@/types/contentful/generated-types";
+import ContentfulImage from "./ContentfulImage";
 
 async function getCategories() {
   const res =
@@ -16,10 +17,16 @@ const CategoriesList = async () => {
   const categories = await getCategories();
 
   return (
-    <div className="px-4 space-y-2 space-x-2 flex flex-wrap">
+    <div className="px-4 grid grid-cols-2 gap-4">
       {categories.map((category, index) => (
-        <div key={index} className="p-2 w-1/3 bg-orange-300">
-          {category.fields.title}
+        <div key={index} className="w-full pb-6 bg-orange-300">
+          {category.fields.image && (
+            <ContentfulImage
+              alt={category.fields.image.fields.title || ""}
+              src={category.fields.image.fields.file?.url || ""}
+            />
+          )}
+          <p className="text-center">{category.fields.title}</p>
         </div>
       ))}
     </div>
