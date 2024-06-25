@@ -10,7 +10,7 @@ export interface TypeRecipeFields {
     instruction: EntryFieldTypes.RichText;
     time?: EntryFieldTypes.Integer;
     level?: EntryFieldTypes.Symbol<"Average" | "Easy" | "Hard">;
-    category?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeCategorySkeleton>>;
+    category?: EntryFieldTypes.EntryLink<TypeCategorySkeleton>;
 }
 
 export type TypeRecipeSkeleton = EntrySkeletonType<TypeRecipeFields, "recipe">;

@@ -1,6 +1,6 @@
 import { Recipe } from "@/types/Recipe";
 import Link from "next/link";
-import ContentfulImage from "./ContentfulImage";
+import ContentfulImage from "@/app/components/ContentfulImage";
 
 type Props = {
   data: Recipe;
@@ -9,7 +9,7 @@ type Props = {
 const RecipeCard = ({ data }: Props) => {
   const { image, name, level, time } = data.fields;
   return (
-    <Link href={`recipes/${data.fields.slug}`} className="block">
+    <Link href={`/recipes/${data.fields.slug}`} className="block">
       <div className="p-5 w-full flex gap-2">
         <div className="w-1/3 h-24">
           {image && (

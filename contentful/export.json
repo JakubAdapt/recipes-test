@@ -12,7 +12,7 @@
         "id": "category",
         "type": "ContentType",
         "createdAt": "2024-05-22T12:50:14.387Z",
-        "updatedAt": "2024-05-22T12:50:16.123Z",
+        "updatedAt": "2024-06-25T11:32:44.073Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -20,8 +20,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 1,
-        "publishedAt": "2024-05-22T12:50:16.123Z",
+        "publishedVersion": 3,
+        "publishedAt": "2024-06-25T11:32:44.073Z",
         "firstPublishedAt": "2024-05-22T12:50:16.123Z",
         "createdBy": {
           "sys": {
@@ -37,8 +37,8 @@
             "id": "6n5zMiaRUNYJBkNMAQ7pPU"
           }
         },
-        "publishedCounter": 1,
-        "version": 2,
+        "publishedCounter": 2,
+        "version": 4,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -59,6 +59,20 @@
           "localized": false,
           "required": true,
           "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
           ],
           "disabled": false,
           "omitted": false
@@ -394,7 +408,7 @@
         "id": "recipe",
         "type": "ContentType",
         "createdAt": "2024-06-10T08:45:29.285Z",
-        "updatedAt": "2024-06-10T10:45:20.849Z",
+        "updatedAt": "2024-06-25T12:07:28.153Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -402,8 +416,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 9,
-        "publishedAt": "2024-06-10T10:45:20.849Z",
+        "publishedVersion": 15,
+        "publishedAt": "2024-06-25T12:07:28.153Z",
         "firstPublishedAt": "2024-06-10T08:45:29.679Z",
         "createdBy": {
           "sys": {
@@ -419,8 +433,8 @@
             "id": "6n5zMiaRUNYJBkNMAQ7pPU"
           }
         },
-        "publishedCounter": 5,
-        "version": 10,
+        "publishedCounter": 8,
+        "version": 16,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -618,24 +632,19 @@
         {
           "id": "category",
           "name": "Category",
-          "type": "Array",
+          "type": "Link",
           "localized": false,
           "required": false,
           "validations": [
+            {
+              "linkContentType": [
+                "category"
+              ]
+            }
           ],
           "disabled": false,
           "omitted": false,
-          "items": {
-            "type": "Link",
-            "validations": [
-              {
-                "linkContentType": [
-                  "category"
-                ]
-              }
-            ],
-            "linkType": "Entry"
-          }
+          "linkType": "Entry"
         }
       ]
     }
@@ -654,7 +663,7 @@
             "linkType": "Space"
           }
         },
-        "version": 2,
+        "version": 4,
         "createdAt": "2024-05-22T12:50:16.313Z",
         "createdBy": {
           "sys": {
@@ -663,7 +672,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-05-22T12:50:17.392Z",
+        "updatedAt": "2024-06-25T11:32:44.787Z",
         "updatedBy": {
           "sys": {
             "id": "6n5zMiaRUNYJBkNMAQ7pPU",
@@ -688,13 +697,24 @@
       },
       "controls": [
         {
-          "fieldId": "title"
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
         },
         {
-          "fieldId": "description"
+          "fieldId": "slug",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
         },
         {
-          "fieldId": "image"
+          "fieldId": "description",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "image",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
         }
       ]
     },
@@ -897,7 +917,7 @@
             "linkType": "Space"
           }
         },
-        "version": 10,
+        "version": 16,
         "createdAt": "2024-06-10T08:45:29.884Z",
         "createdBy": {
           "sys": {
@@ -906,7 +926,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-06-10T10:45:21.827Z",
+        "updatedAt": "2024-06-25T12:07:28.983Z",
         "updatedBy": {
           "sys": {
             "id": "6n5zMiaRUNYJBkNMAQ7pPU",
@@ -975,7 +995,7 @@
         },
         {
           "fieldId": "category",
-          "widgetId": "entryLinksEditor",
+          "widgetId": "entryLinkEditor",
           "widgetNamespace": "builtin"
         }
       ]
@@ -1000,7 +1020,7 @@
         "id": "57NCfK7tz67JOa9MxBtq4k",
         "type": "Entry",
         "createdAt": "2024-06-10T08:45:53.515Z",
-        "updatedAt": "2024-06-11T11:30:41.851Z",
+        "updatedAt": "2024-06-25T12:07:47.533Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1008,8 +1028,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 52,
-        "publishedAt": "2024-06-11T11:30:41.851Z",
+        "publishedVersion": 54,
+        "publishedAt": "2024-06-25T12:07:47.533Z",
         "firstPublishedAt": "2024-06-10T09:19:08.335Z",
         "createdBy": {
           "sys": {
@@ -1025,8 +1045,8 @@
             "id": "6n5zMiaRUNYJBkNMAQ7pPU"
           }
         },
-        "publishedCounter": 5,
-        "version": 53,
+        "publishedCounter": 6,
+        "version": 55,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1449,22 +1469,13 @@
           "en-US": "Easy"
         },
         "category": {
-          "en-US": [
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "2HYVezCnbK3LkntR3XyhJw"
-              }
-            },
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "54W2yssGrKte2db5hS73mi"
-              }
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "54W2yssGrKte2db5hS73mi"
             }
-          ]
+          }
         }
       }
     },
@@ -1486,7 +1497,7 @@
         "id": "3dmhEbMsRrfLUmWI79bofN",
         "type": "Entry",
         "createdAt": "2024-06-10T09:21:48.665Z",
-        "updatedAt": "2024-06-10T09:25:40.469Z",
+        "updatedAt": "2024-06-25T11:33:23.140Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1494,8 +1505,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 3,
-        "publishedAt": "2024-06-10T09:25:40.469Z",
+        "publishedVersion": 5,
+        "publishedAt": "2024-06-25T11:33:23.140Z",
         "firstPublishedAt": "2024-06-10T09:25:40.469Z",
         "createdBy": {
           "sys": {
@@ -1511,8 +1522,8 @@
             "id": "6n5zMiaRUNYJBkNMAQ7pPU"
           }
         },
-        "publishedCounter": 1,
-        "version": 4,
+        "publishedCounter": 2,
+        "version": 6,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1539,6 +1550,9 @@
       "fields": {
         "title": {
           "en-US": "Vegetarian"
+        },
+        "slug": {
+          "en-US": "vegetarian"
         },
         "image": {
           "en-US": {
@@ -1569,7 +1583,7 @@
         "id": "2HYVezCnbK3LkntR3XyhJw",
         "type": "Entry",
         "createdAt": "2024-06-10T09:25:46.429Z",
-        "updatedAt": "2024-06-10T09:26:20.026Z",
+        "updatedAt": "2024-06-25T11:33:12.353Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1577,8 +1591,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 2,
-        "publishedAt": "2024-06-10T09:26:20.026Z",
+        "publishedVersion": 4,
+        "publishedAt": "2024-06-25T11:33:12.353Z",
         "firstPublishedAt": "2024-06-10T09:26:20.026Z",
         "createdBy": {
           "sys": {
@@ -1594,8 +1608,8 @@
             "id": "6n5zMiaRUNYJBkNMAQ7pPU"
           }
         },
-        "publishedCounter": 1,
-        "version": 3,
+        "publishedCounter": 2,
+        "version": 5,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1622,6 +1636,9 @@
       "fields": {
         "title": {
           "en-US": "Meat"
+        },
+        "slug": {
+          "en-US": "meat"
         },
         "image": {
           "en-US": {
@@ -1652,7 +1669,7 @@
         "id": "XSMx6FksyeiRTb7MwXUZc",
         "type": "Entry",
         "createdAt": "2024-06-10T09:26:26.738Z",
-        "updatedAt": "2024-06-10T09:26:58.109Z",
+        "updatedAt": "2024-06-25T11:33:03.355Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1660,8 +1677,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 2,
-        "publishedAt": "2024-06-10T09:26:58.109Z",
+        "publishedVersion": 4,
+        "publishedAt": "2024-06-25T11:33:03.355Z",
         "firstPublishedAt": "2024-06-10T09:26:58.109Z",
         "createdBy": {
           "sys": {
@@ -1677,8 +1694,8 @@
             "id": "6n5zMiaRUNYJBkNMAQ7pPU"
           }
         },
-        "publishedCounter": 1,
-        "version": 3,
+        "publishedCounter": 2,
+        "version": 5,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1705,6 +1722,9 @@
       "fields": {
         "title": {
           "en-US": "Sweet"
+        },
+        "slug": {
+          "en-US": "sweet"
         },
         "image": {
           "en-US": {
@@ -1735,7 +1755,7 @@
         "id": "54W2yssGrKte2db5hS73mi",
         "type": "Entry",
         "createdAt": "2024-06-10T09:29:00.266Z",
-        "updatedAt": "2024-06-10T09:30:00.155Z",
+        "updatedAt": "2024-06-25T11:32:54.530Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1743,8 +1763,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 2,
-        "publishedAt": "2024-06-10T09:30:00.155Z",
+        "publishedVersion": 4,
+        "publishedAt": "2024-06-25T11:32:54.530Z",
         "firstPublishedAt": "2024-06-10T09:30:00.155Z",
         "createdBy": {
           "sys": {
@@ -1760,8 +1780,8 @@
             "id": "6n5zMiaRUNYJBkNMAQ7pPU"
           }
         },
-        "publishedCounter": 1,
-        "version": 3,
+        "publishedCounter": 2,
+        "version": 5,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1788,6 +1808,9 @@
       "fields": {
         "title": {
           "en-US": "Pasta"
+        },
+        "slug": {
+          "en-US": "pasta"
         },
         "image": {
           "en-US": {
@@ -2001,7 +2024,7 @@
         "id": "3TQunAJGeAoal0EcMkGJgH",
         "type": "Entry",
         "createdAt": "2024-06-11T11:15:52.327Z",
-        "updatedAt": "2024-06-11T11:29:55.769Z",
+        "updatedAt": "2024-06-25T12:08:08.201Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -2009,8 +2032,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 30,
-        "publishedAt": "2024-06-11T11:29:55.769Z",
+        "publishedVersion": 32,
+        "publishedAt": "2024-06-25T12:08:08.201Z",
         "firstPublishedAt": "2024-06-11T11:29:55.769Z",
         "createdBy": {
           "sys": {
@@ -2026,8 +2049,8 @@
             "id": "6n5zMiaRUNYJBkNMAQ7pPU"
           }
         },
-        "publishedCounter": 1,
-        "version": 31,
+        "publishedCounter": 2,
+        "version": 33,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -2429,15 +2452,13 @@
           "en-US": "Easy"
         },
         "category": {
-          "en-US": [
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "2HYVezCnbK3LkntR3XyhJw"
-              }
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2HYVezCnbK3LkntR3XyhJw"
             }
-          ]
+          }
         }
       }
     },
