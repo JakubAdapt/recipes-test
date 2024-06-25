@@ -37,4 +37,4 @@ next-env.d.ts
 
 #contetful
 contentful/export.json
-/generated-types/
+src/types/contentful/generated-types
