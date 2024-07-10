@@ -1,5 +1,5 @@
-import type { HeroType } from "@/types/Hero";
-import ContentfulImage from "@/app/components/ContentfulImage";
+import type { HeroType } from "@typings/Hero";
+import ContentfulImage from "@app/components/ContentfulImage";
 
 type Props = {
   data: HeroType;

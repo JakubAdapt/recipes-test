@@ -1,10 +1,10 @@
-import { contentFulClient } from "@/services/contentful";
+import { contentFulClient } from "@services/contentful";
 import {
   TypeLandingPageSkeleton,
   TypeRecipeSkeleton,
-} from "@/types/contentful/generated-types";
-import RecipeCard from "@/app/components/RecipeCard";
-import Hero from "@/app/components/Hero";
+} from "@typings/contentful/generated-types";
+import RecipeCard from "@app/components/RecipeCard";
+import Hero from "@app/components/Hero";
 
 async function getPage() {
   const res =

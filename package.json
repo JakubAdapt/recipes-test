@@ -20,9 +20,9 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@typings/node": "^20",
+    "@typings/react": "^18",
+    "@typings/react-dom": "^18",
     "cf-content-types-generator": "^2.15.2",
     "contentful-cli": "^3.3.2",
     "dotenv-cli": "^7.4.2",

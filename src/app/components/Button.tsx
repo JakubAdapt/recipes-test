@@ -1,4 +1,4 @@
-import type { ButtonType } from "@/types/Button";
+import type { ButtonType } from "@typings/Button";
 import Link from "next/link";
 
 type Props = {

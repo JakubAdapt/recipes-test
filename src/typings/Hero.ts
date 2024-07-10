@@ -1,5 +1,5 @@
 import { Entry } from "contentful";
-import { TypeHeroSkeleton } from "@/types/contentful/generated-types/TypeHero";
+import { TypeHeroSkeleton } from "@typings/contentful/generated-types/TypeHero";
 
 export type HeroType = Entry<
   TypeHeroSkeleton,

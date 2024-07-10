@@ -1,8 +1,8 @@
-import { contentFulClient } from "@/services/contentful";
-import { TypeLandingPageSkeleton } from "@/types/contentful/generated-types";
-import Hero from "@/app/components/Hero";
-import Content from "@/app/components/Content";
-import CategoriesList from "@/app/components/CategoriesList";
+import { contentFulClient } from "@services/contentful";
+import Hero from "@app/components/Hero";
+import Content from "@app/components/Content";
+import CategoriesList from "@app/components/CategoriesList";
+import { TypeLandingPageSkeleton } from "@typings/contentful/generated-types/TypeLandingPage";
 
 async function getPage() {
   const res =

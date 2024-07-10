@@ -1,6 +1,6 @@
-import { Recipe } from "@/types/Recipe";
+import { Recipe } from "@typings/Recipe";
 import Link from "next/link";
-import ContentfulImage from "@/app/components/ContentfulImage";
+import ContentfulImage from "@app/components/ContentfulImage";
 
 type Props = {
   data: Recipe;

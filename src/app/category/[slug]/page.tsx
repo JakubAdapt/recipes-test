@@ -1,9 +1,9 @@
-import ContentfulImage from "@/app/components/ContentfulImage";
-import RecipeCard from "@/app/components/RecipeCard";
-import { contentFulClient } from "@/services/contentful";
-import { PageParams } from "@/types/PageParams";
-import { TypeCategorySkeleton } from "@/types/contentful/generated-types/TypeCategory";
-import { TypeRecipeSkeleton } from "@/types/contentful/generated-types/TypeRecipe";
+import ContentfulImage from "@app/components/ContentfulImage";
+import RecipeCard from "@app/components/RecipeCard";
+import { contentFulClient } from "@services/contentful";
+import { PageParams } from "@typings/PageParams";
+import { TypeCategorySkeleton } from "@typings/contentful/generated-types/TypeCategory";
+import { TypeRecipeSkeleton } from "@typings/contentful/generated-types/TypeRecipe";
 
 async function getCategory(category: string) {
   const res =

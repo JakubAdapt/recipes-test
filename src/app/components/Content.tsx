@@ -1,6 +1,6 @@
 import { Entry, EntrySkeletonType } from "contentful";
-import Button from "@/app/components/Button";
-import { isButton } from "@/utils/isButton";
+import Button from "@app/components/Button";
+import { isButton } from "@utils/isButton";
 import { ReactNode } from "react";
 
 type Props = {

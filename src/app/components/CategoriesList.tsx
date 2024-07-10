@@ -1,6 +1,6 @@
-import { contentFulClient } from "@/services/contentful";
-import { TypeCategorySkeleton } from "@/types/contentful/generated-types";
-import ContentfulImage from "@/app/components/ContentfulImage";
+import { contentFulClient } from "@services/contentful";
+import { TypeCategorySkeleton } from "@typings/contentful/generated-types";
+import ContentfulImage from "@app/components/ContentfulImage";
 import Link from "next/link";
 
 async function getCategories() {

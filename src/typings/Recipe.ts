@@ -1,5 +1,5 @@
 import { Entry } from "contentful";
-import { TypeRecipeSkeleton } from "@/types/contentful/generated-types/TypeRecipe";
+import { TypeRecipeSkeleton } from "@typings/contentful/generated-types/TypeRecipe";
 
 export type Recipe = Entry<
   TypeRecipeSkeleton,

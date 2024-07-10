@@ -1,4 +1,4 @@
-import { ButtonType } from "@/types/Button";
+import { ButtonType } from "@typings/Button";
 import { Entry, EntrySkeletonType } from "contentful";
 
 export const isButton = (

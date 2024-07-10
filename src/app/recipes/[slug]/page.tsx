@@ -1,7 +1,7 @@
-import ContentfulImage from "@/app/components/ContentfulImage";
-import { contentFulClient } from "@/services/contentful";
-import { PageParams } from "@/types/PageParams";
-import { TypeRecipeSkeleton } from "@/types/contentful/generated-types";
+import ContentfulImage from "@app/components/ContentfulImage";
+import { contentFulClient } from "@services/contentful";
+import { PageParams } from "@typings/PageParams";
+import { TypeRecipeSkeleton } from "@typings/contentful/generated-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 async function getRecipe(slug: string) {
