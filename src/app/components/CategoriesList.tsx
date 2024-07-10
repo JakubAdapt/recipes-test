@@ -23,14 +23,16 @@ const CategoriesList = async () => {
         <Link
           href={`category/${category.fields.slug}`}
           key={index}
-          className="block w-full pb-6 bg-orange"
+          className="block w-full pb-6 rounded-md bg-gray text-white"
         >
           {category.fields.image && (
             <ContentfulImage
               alt={category.fields.image.fields.title || ""}
               src={category.fields.image.fields.file?.url || ""}
+              className="rounded-t-lg"
             />
           )}
+
           <p className="text-center">{category.fields.title}</p>
         </Link>
       ))}

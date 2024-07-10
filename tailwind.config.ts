@@ -5,15 +5,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        white: "#eeeeee",
-        black: "#272727",
-        gray: "#747474",
-        orange: "#ff652f",
-        yellow: "#ffe400",
-        green: "#14a76c",
+        white: "var(--color-white)",
+        black: "var(--color-black)",
+        gray: "var(--color-gray)",
+        orange: "var(--color-orange)",
+        yellow: "var(--color-yellow)",
+        green: "var(--color-green)",
 
-        "off-black": "#000000",
-        "off-white": "#ffffff",
+        "off-black": "var(--color-off-black)",
+        "off-white": "var(--color-off-white)",
       },
     },
   },

@@ -3,7 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --color-orange: #ff652f;
+  --color-white: hsl(0, 0%, 93%);
+  --color-black: hsl(0, 0%, 15%);
+  --color-gray: hsl(0, 0%, 45%);
+  --color-orange: hsl(16, 100%, 59%);
+  --color-yellow: hsl(54, 100%, 50%);
+  --color-green: hsl(156, 79%, 37%);
+  --color-off-black: hsl(0, 0%, 0%);
+  --color-off-white: hsl(0, 0%, 100%);
 }
 
 .contentful-document ul {
