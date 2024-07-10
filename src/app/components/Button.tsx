@@ -1,22 +1,22 @@
-import type { ButtonType } from "@typings/Button";
-import Link from "next/link";
+import type { ButtonType } from '@typings/Button'
+import Link from 'next/link'
 
 type Props = {
-  data: ButtonType;
-};
+  data: ButtonType
+}
 
 const Button = ({ data }: Props) => {
   const buttonTag = (
-    <button className="bg-orange py-2 px-4 rounded w-full text-off-black">
+    <button className="w-full rounded bg-orange px-4 py-2 text-off-black">
       {data.fields.label}
     </button>
-  );
+  )
 
   if (data.fields.link) {
-    return <Link href={data.fields.link}>{buttonTag}</Link>;
+    return <Link href={data.fields.link}>{buttonTag}</Link>
   }
 
-  return buttonTag;
-};
+  return buttonTag
+}
 
-export default Button;
+export default Button

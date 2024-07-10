@@ -1,26 +1,23 @@
-import { Recipe } from "@typings/Recipe";
-import Link from "next/link";
-import ContentfulImage from "@app/components/ContentfulImage";
+import { Recipe } from '@typings/Recipe'
+import Link from 'next/link'
+import ContentfulImage from '@app/components/ContentfulImage'
 
 type Props = {
-  data: Recipe;
-};
+  data: Recipe
+}
 
 const RecipeCard = ({ data }: Props) => {
-  const { image, name, level, time } = data.fields;
+  const { image, name, level, time } = data.fields
 
   return (
     <Link href={`/recipes/${data.fields.slug}`} className="block">
-      <div className="p-5 w-full flex gap-2">
-        <div className="w-1/3 h-24">
+      <div className="flex w-full gap-2 p-5">
+        <div className="h-24 w-1/3">
           {image && (
-            <ContentfulImage
-              alt={image.fields.title || ""}
-              src={image.fields.file?.url || ""}
-            />
+            <ContentfulImage alt={image.fields.title || ''} src={image.fields.file?.url || ''} />
           )}
         </div>
-        <div className="w-2/3 flex flex-col justify-between">
+        <div className="flex w-2/3 flex-col justify-between">
           <h2 className="text-lg">{name}</h2>
 
           <div className="flex gap-2 text-sm">
@@ -30,7 +27,7 @@ const RecipeCard = ({ data }: Props) => {
         </div>
       </div>
     </Link>
-  );
-};
+  )
+}
 
-export default RecipeCard;
+export default RecipeCard

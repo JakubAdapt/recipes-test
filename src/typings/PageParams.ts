@@ -1,3 +1,3 @@
 export type PageParams = {
-  params: { slug: string };
-};
+  params: { slug: string }
+}

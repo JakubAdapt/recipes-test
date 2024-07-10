@@ -1,40 +1,31 @@
-import { contentFulClient } from "@services/contentful";
-import {
-  TypeLandingPageSkeleton,
-  TypeRecipeSkeleton,
-} from "@typings/contentful/generated-types";
-import RecipeCard from "@app/components/RecipeCard";
-import Hero from "@app/components/Hero";
+import { contentFulClient } from '@services/contentful'
+import { TypeLandingPageSkeleton, TypeRecipeSkeleton } from '@typings/contentful/generated-types'
+import RecipeCard from '@app/components/RecipeCard'
+import Hero from '@app/components/Hero'
 
 async function getPage() {
-  const res =
-    await contentFulClient.withoutUnresolvableLinks.getEntries<TypeLandingPageSkeleton>(
-      {
-        content_type: "landingPage",
-        "fields.slug": "recipes",
-        include: 2,
-      }
-    );
+  const res = await contentFulClient.withoutUnresolvableLinks.getEntries<TypeLandingPageSkeleton>({
+    content_type: 'landingPage',
+    'fields.slug': 'recipes',
+    include: 2,
+  })
 
-  return res.items[0].fields;
+  return res.items[0].fields
 }
 
 async function getRecipes() {
-  const res =
-    await contentFulClient.withoutUnresolvableLinks.getEntries<TypeRecipeSkeleton>(
-      {
-        content_type: "recipe",
-      }
-    );
+  const res = await contentFulClient.withoutUnresolvableLinks.getEntries<TypeRecipeSkeleton>({
+    content_type: 'recipe',
+  })
 
-  return res.items;
+  return res.items
 }
 
 export default async function RecipesPage() {
-  const page = await getPage();
-  const recipes = await getRecipes();
+  const page = await getPage()
+  const recipes = await getRecipes()
 
-  const hero = page.hero;
+  const hero = page.hero
 
   return (
     <div>
@@ -46,5 +37,5 @@ export default async function RecipesPage() {
         ))}
       </div>
     </div>
-  );
+  )
 }

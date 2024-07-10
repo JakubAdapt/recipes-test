@@ -1,5 +1,5 @@
-import SkeletonLoader from "@app/components/SkeletonLoader";
+import SkeletonLoader from '@app/components/SkeletonLoader'
 
 export default function Loading() {
-  return <SkeletonLoader type="page" />;
+  return <SkeletonLoader type="page" />
 }

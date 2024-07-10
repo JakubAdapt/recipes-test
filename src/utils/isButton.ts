@@ -1,8 +1,8 @@
-import { ButtonType } from "@typings/Button";
-import { Entry, EntrySkeletonType } from "contentful";
+import { ButtonType } from '@typings/Button'
+import { Entry, EntrySkeletonType } from 'contentful'
 
 export const isButton = (
-  entry: Entry<EntrySkeletonType, "WITHOUT_UNRESOLVABLE_LINKS", string>
+  entry: Entry<EntrySkeletonType, 'WITHOUT_UNRESOLVABLE_LINKS', string>
 ): entry is ButtonType => {
-  return entry.sys.contentType.sys.id === "button";
-};
+  return entry.sys.contentType.sys.id === 'button'
+}

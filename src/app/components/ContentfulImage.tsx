@@ -1,22 +1,22 @@
-import Image, { ImageProps } from "next/image";
+import Image, { ImageProps } from 'next/image'
 
 type Props = ImageProps & {
-  src: string;
-};
+  src: string
+}
 
 const ContentfulImage = ({ alt, src, ...props }: Props) => {
   return (
     <Image
-      src={src.replace("//", "https://")}
+      src={src.replace('//', 'https://')}
       alt={alt}
       width={0}
       height={0}
       sizes="100vw"
-      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
       {...props}
       // loader={() => `${src}?w=${width}&q=75`}
     />
-  );
-};
+  )
+}
 
-export default ContentfulImage;
+export default ContentfulImage

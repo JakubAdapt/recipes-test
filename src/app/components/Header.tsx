@@ -1,11 +1,11 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 export const Header = () => {
   return (
-    <header className="bg-black text-white p-4 top-0 fixed w-full z-20">
+    <header className="fixed top-0 z-20 w-full bg-black p-4 text-white">
       <Link href="/" className="text-2xl font-bold">
         Home
       </Link>
     </header>
-  );
-};
+  )
+}

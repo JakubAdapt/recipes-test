@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    "format:check": "prettier --check './src/**/*.{ts,tsx,js,jsx}'",
+    "format:fix": "prettier --write './src/**/*.{ts,tsx,js,jsx}'",
     "contentful-export-types": "dotenv expose-env -- contentful space export --config contentful/export-config.json --management-token %CONTENTFUL_CODEGEN_TOKEN% --space-id %CONTENTFUL_SPACE_ID%",
     "contentful-generate-types": "cf-content-types-generator --v10 contentful/export.json --out src/types/contentful/generated-types"
   },
@@ -20,16 +22,21 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@typings/node": "^20",
-    "@typings/react": "^18",
-    "@typings/react-dom": "^18",
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
     "cf-content-types-generator": "^2.15.2",
     "contentful-cli": "^3.3.2",
     "dotenv-cli": "^7.4.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
+    "eslint-config-prettier": "^9.1.0",
     "expose-env": "^0.1.7",
     "postcss": "^8",
+    "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
