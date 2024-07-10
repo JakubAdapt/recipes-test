@@ -39,16 +39,20 @@ export default async function RecipePage({ params }: PageParams) {
       {/* Content container */}
       <div className="relative z-10 flex justify-center">
         <div className="bg-white text-black rounded-t-lg shadow-lg p-5 w-11/12 mt-[300px] space-y-4">
-          <h1 className="font-semibold text-lg">{recipe.name}</h1>
+          <h1 className="font-semibold text-xl">{recipe.name}</h1>
 
           <p className="flex justify-between text-green">
             <span>{recipe.level}</span>
             <span>{recipe.time} minutes</span>
           </p>
 
-          <div>{documentToReactComponents(recipe.ingredients)}</div>
+          <div className="contentful-document">
+            {documentToReactComponents(recipe.ingredients)}
+          </div>
 
-          <div>{documentToReactComponents(recipe.instruction)}</div>
+          <div className="contentful-document">
+            {documentToReactComponents(recipe.instruction)}
+          </div>
         </div>
       </div>
     </div>
