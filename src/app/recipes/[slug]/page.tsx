@@ -21,35 +21,36 @@ export default async function RecipePage({ params }: PageParams) {
   const recipe = await getRecipe(params.slug);
 
   return (
-    <div>
-      {recipe.image && (
-        <ContentfulImage
-          alt={recipe.image.fields.title || ""}
-          src={recipe.image.fields.file?.url || ""}
-        />
-      )}
+    <div className="relative h-screen bg-white">
+      {/* Image container */}
+      <div className="absolute top-0 h-3/5 w-full">
+        {recipe.image && (
+          <ContentfulImage
+            alt={recipe.image.fields.title || ""}
+            src={recipe.image.fields.file?.url || ""}
+            priority
+          />
+        )}
 
-      <h1>{recipe.name}</h1>
+        {/* Custom gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-white"></div>
+      </div>
 
-      <br />
-      <hr />
-      <br />
+      {/* Content container */}
+      <div className="relative z-10 flex justify-center">
+        <div className="bg-white rounded-t-lg shadow-lg p-5 w-11/12 mt-[300px] space-y-4">
+          <h1>{recipe.name}</h1>
 
-      <p>{documentToReactComponents(recipe.ingredients)}</p>
+          <p className="flex justify-between">
+            <span>{recipe.level}</span>
+            <span>{recipe.time} minutes</span>
+          </p>
 
-      <br />
-      <hr />
-      <br />
+          <div>{documentToReactComponents(recipe.ingredients)}</div>
 
-      <p>{documentToReactComponents(recipe.instruction)}</p>
-
-      <br />
-      <hr />
-      <br />
-
-      <p>{recipe.time} minutes</p>
-
-      <p>Diffuculty {recipe.level}</p>
+          <div>{documentToReactComponents(recipe.instruction)}</div>
+        </div>
+      </div>
     </div>
   );
 }

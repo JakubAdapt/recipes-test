@@ -22,7 +22,7 @@ export default async function Home() {
   const { hero, sections } = page;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 pb-4">
       {hero && <Hero data={hero} />}
 
       <CategoriesList />
