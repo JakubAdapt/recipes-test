@@ -7,7 +7,7 @@ type Props = {
 
 const Button = ({ data }: Props) => {
   const buttonTag = (
-    <button className="bg-orange-400 py-2 px-4 rounded w-full">
+    <button className="bg-orange py-2 px-4 rounded w-full text-off-black">
       {data.fields.label}
     </button>
   );

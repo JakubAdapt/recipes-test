@@ -9,7 +9,7 @@ const Hero = ({ data }: Props) => {
   const { image } = data.fields;
 
   return (
-    <div className="relative w-full h-60">
+    <div className="relative w-full h-60 bg-gray">
       {image && (
         <ContentfulImage
           alt={image.fields.title || ""}
@@ -18,7 +18,7 @@ const Hero = ({ data }: Props) => {
         />
       )}
 
-      <h1 className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+      <h1 className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center text-off-black text-xl font-semibold [text-shadow:0_0_1px_var(--color-orange)]">
         {data.fields.heading}
       </h1>
     </div>
