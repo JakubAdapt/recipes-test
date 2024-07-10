@@ -8,6 +8,7 @@ type Props = {
 
 const RecipeCard = ({ data }: Props) => {
   const { image, name, level, time } = data.fields;
+
   return (
     <Link href={`/recipes/${data.fields.slug}`} className="block">
       <div className="p-5 w-full flex gap-2">
