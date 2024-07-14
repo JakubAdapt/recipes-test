@@ -1,21 +1,10 @@
-import { contentFulClient } from '@services/contentful'
 import Hero from '@app/components/Hero'
 import Content from '@app/components/Content'
 import CategoriesList from '@app/components/CategoriesList'
-import { TypeLandingPageSkeleton } from '@typings/contentful/generated-types/TypeLandingPage'
-
-async function getPage() {
-  const res = await contentFulClient.withoutUnresolvableLinks.getEntries<TypeLandingPageSkeleton>({
-    content_type: 'landingPage',
-    'fields.slug': 'home',
-    include: 2,
-  })
-
-  return res.items[0].fields
-}
+import { getPage } from '@services/getPage'
 
 export default async function Home() {
-  const page = await getPage()
+  const page = await getPage('home')
   const { hero, sections } = page
 
   return (

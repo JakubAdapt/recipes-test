@@ -1,21 +1,10 @@
 import ContentfulImage from '@app/components/ContentfulImage'
-import { contentFulClient } from '@services/contentful'
 import { PageParams } from '@typings/PageParams'
-import { TypeRecipeSkeleton } from '@typings/contentful/generated-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-
-async function getRecipe(slug: string) {
-  const res = await contentFulClient.withoutUnresolvableLinks.getEntries<TypeRecipeSkeleton>({
-    content_type: 'recipe',
-    'fields.slug': slug.replace('/recipes/', ''),
-    include: 2,
-  })
-
-  return res.items[0].fields
-}
+import { getRecipes } from '@services/getRecipes'
 
 export default async function RecipePage({ params }: PageParams) {
-  const recipe = await getRecipe(params.slug)
+  const recipe = await getRecipes(params.slug)
 
   return (
     <div className="relative h-screen bg-black">

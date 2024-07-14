@@ -1,18 +1,9 @@
 import ContentfulImage from '@app/components/ContentfulImage'
 import RecipeCard from '@app/components/RecipeCard'
 import { contentFulClient } from '@services/contentful'
+import { getCategories } from '@services/getCategories'
 import { PageParams } from '@typings/PageParams'
-import { TypeCategorySkeleton } from '@typings/contentful/generated-types/TypeCategory'
 import { TypeRecipeSkeleton } from '@typings/contentful/generated-types/TypeRecipe'
-
-async function getCategory(category: string) {
-  const res = await contentFulClient.withoutUnresolvableLinks.getEntries<TypeCategorySkeleton>({
-    content_type: 'category',
-    'fields.slug': category,
-  })
-
-  return res.items[0].fields
-}
 
 async function getRecipesByCategory(category: string) {
   const res = await contentFulClient.withoutUnresolvableLinks.getEntries<TypeRecipeSkeleton>({
@@ -26,7 +17,7 @@ async function getRecipesByCategory(category: string) {
 }
 
 export default async function CategoryPage({ params }: PageParams) {
-  const category = await getCategory(params.slug)
+  const category = await getCategories(params.slug)
   const recipes = await getRecipesByCategory(params.slug)
 
   return (
@@ -42,7 +33,7 @@ export default async function CategoryPage({ params }: PageParams) {
 
       <div className="space-y-3">
         {recipes.map((recipe) => (
-          <RecipeCard key={recipe.sys.id} data={recipe} />
+          <RecipeCard key={recipe.sys.id} data={recipe.fields} />
         ))}
       </div>
     </div>

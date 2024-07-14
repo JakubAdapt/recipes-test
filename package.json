@@ -11,7 +11,7 @@
     "format:check": "prettier --check './src/**/*.{ts,tsx,js,jsx}'",
     "format:fix": "prettier --write './src/**/*.{ts,tsx,js,jsx}'",
     "contentful-export-types": "dotenv expose-env -- contentful space export --config contentful/export-config.json --management-token %CONTENTFUL_CODEGEN_TOKEN% --space-id %CONTENTFUL_SPACE_ID%",
-    "contentful-generate-types": "cf-content-types-generator --v10 contentful/export.json --out src/types/contentful/generated-types"
+    "contentful-generate-types": "cf-content-types-generator --v10 contentful/export.json --out src/typings/contentful/generated-types"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.21.2",
