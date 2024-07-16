@@ -9,7 +9,7 @@ export default async function Home() {
 
   return (
     <div className="space-y-4 pb-4">
-      {hero && <Hero data={hero} />}
+      {hero && <Hero image={hero.fields.image} heading={hero.fields.heading} />}
 
       <CategoriesList />
 

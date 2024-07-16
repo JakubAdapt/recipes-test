@@ -1,13 +1,13 @@
 import type { HeroType } from '@typings/Hero'
 import ContentfulImage from '@app/components/ContentfulImage'
+import { Asset } from 'contentful'
 
 type Props = {
-  data: HeroType
+  image: Asset<'WITHOUT_UNRESOLVABLE_LINKS', string> | undefined
+  heading: string
 }
 
-const Hero = ({ data }: Props) => {
-  const { image } = data.fields
-
+const Hero = ({ image, heading }: Props) => {
   return (
     <div className="relative h-60 w-full bg-gray">
       {image && (
@@ -19,7 +19,7 @@ const Hero = ({ data }: Props) => {
       )}
 
       <h1 className="absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center text-xl font-semibold text-off-black [text-shadow:0_0_1px_var(--color-orange)]">
-        {data.fields.heading}
+        {heading}
       </h1>
     </div>
   )

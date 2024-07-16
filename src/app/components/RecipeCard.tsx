@@ -11,18 +11,23 @@ const RecipeCard = ({ data }: Props) => {
 
   return (
     <Link href={`/recipes/${slug}`} className="block">
-      <div className="flex w-full gap-2 p-5">
-        <div className="h-24 w-1/3">
+      <div className="relative rounded-lg">
+        <div className="w-full">
           {image && (
-            <ContentfulImage alt={image.fields.title || ''} src={image.fields.file?.url || ''} />
+            <ContentfulImage
+              alt={image.fields.title || ''}
+              src={image.fields.file?.url || ''}
+              className="rounded-lg"
+            />
           )}
         </div>
-        <div className="flex w-2/3 flex-col justify-between">
+
+        <div className="bg-black/50 absolute bottom-0 left-0 right-0 flex justify-between rounded-b-lg px-2 py-1 text-white backdrop-blur-sm">
           <h2 className="text-lg">{name}</h2>
 
-          <div className="flex gap-2 text-sm">
+          <div className="flex flex-col space-y-1 text-sm">
+            <span>{time} min</span>
             <span>{level}</span>
-            <span>{time} mins</span>
           </div>
         </div>
       </div>

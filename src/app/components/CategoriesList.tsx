@@ -17,7 +17,7 @@ const CategoriesList = async () => {
             <ContentfulImage
               alt={category.image.fields.title || ''}
               src={category.image.fields.file?.url || ''}
-              className="rounded-t-lg"
+              className="rounded-t-md"
             />
           )}
 

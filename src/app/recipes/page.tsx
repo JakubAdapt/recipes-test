@@ -1,7 +1,7 @@
-import RecipeCard from '@app/components/RecipeCard'
 import Hero from '@app/components/Hero'
 import { getPage } from '@services/getPage'
 import { getRecipes } from '@services/getRecipes'
+import RecipesList from '@app/components/RecipesList'
 
 export default async function RecipesPage() {
   const page = await getPage('recipes')
@@ -10,14 +10,10 @@ export default async function RecipesPage() {
   const hero = page.hero
 
   return (
-    <div>
-      {hero && <Hero data={hero} />}
+    <div className="space-y-4">
+      {hero && <Hero image={hero.fields.image} heading={hero.fields.heading} />}
 
-      <div className="space-y-3">
-        {recipes.map((recipe) => (
-          <RecipeCard key={recipe.slug} data={recipe} />
-        ))}
-      </div>
+      <RecipesList recipes={recipes} />
     </div>
   )
 }
