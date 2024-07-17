@@ -2,7 +2,8 @@ import ContentfulImage from '@app/components/contentful-image'
 import { PageParams } from '@typings/PageParams'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { getRecipe } from '@services/getRecipe'
-import clsx from 'clsx'
+import { Level } from '@app/components/level'
+import { Time } from '@app/components/time'
 
 export default async function RecipePage({ params }: PageParams) {
   const recipe = await getRecipe(params.slug)
@@ -29,27 +30,9 @@ export default async function RecipePage({ params }: PageParams) {
         <div className="mt-[300px] w-11/12 space-y-4 rounded-t-xl bg-white p-5 text-black shadow-lg">
           <h1 className="text-xl font-semibold">{recipe.name}</h1>
 
-          <p className="flex justify-between text-green">
-            <span
-              className={clsx('', {
-                'text-green': level === 'Easy',
-                'text-gray': level === 'Average',
-                'text-orange': level === 'Hard',
-              })}
-            >
-              {level}
-            </span>
-            {time && (
-              <span
-                className={clsx('', {
-                  'text-green': time <= 30,
-                  'text-gray': time > 30 && time <= 60,
-                  'text-orange': time > 60,
-                })}
-              >
-                {time} minutes
-              </span>
-            )}
+          <p className="flex justify-between font-semibold">
+            {level && <Level level={level} />}
+            {time && <Time time={time} />}
           </p>
 
           <div className="contentful-document">{documentToReactComponents(recipe.ingredients)}</div>

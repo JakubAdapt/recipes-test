@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import ContentfulImage from '@app/components/contentful-image'
 import type { RecipeFields } from '@services/getRecipes'
+import { Time } from '@app/components/time'
+import { Level } from '@app/components/level'
 
 type Props = {
   data: RecipeFields
@@ -22,12 +24,12 @@ const RecipeCard = ({ data }: Props) => {
           )}
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 flex justify-between rounded-b-lg bg-black/50 px-2 py-1 text-white backdrop-blur-sm">
+        <div className="absolute bottom-0 left-0 right-0 flex h-[52px] justify-between rounded-b-lg bg-black/50 px-2 py-1 text-white backdrop-blur-sm">
           <h2 className="text-lg">{name}</h2>
 
-          <div className="flex flex-col space-y-1 text-sm">
-            <span>{time} min</span>
-            <span>{level}</span>
+          <div className="absolute bottom-0 right-0 flex flex-col space-y-1 px-2 py-1 text-right text-sm font-semibold backdrop-blur-sm">
+            {time && <Time time={time} isWhite />}
+            {level && <Level level={level} isWhite />}
           </div>
         </div>
       </div>
