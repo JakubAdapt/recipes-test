@@ -8,18 +8,18 @@ export type RecipeFields = EntryCollection<
   string
 >['items'][number]['fields']
 
-export async function getRecipes(slug: string): Promise<RecipeFields>
-export async function getRecipes(): Promise<RecipeFields[]>
-export async function getRecipes(slug?: string): Promise<RecipeFields | RecipeFields[]> {
-  const response = await contentFulClient.withoutUnresolvableLinks.getEntries<TypeRecipeSkeleton>({
+export async function getRecipes(name?: string): Promise<RecipeFields[]> {
+  const searchParams: Record<string, string | number> = {
     content_type: 'recipe',
-    'fields.slug': slug,
     include: 2,
-  })
-
-  if (slug) {
-    return response.items[0].fields
   }
+
+  if (name) {
+    searchParams['fields.name[match]'] = name
+  }
+
+  const response =
+    await contentFulClient.withoutUnresolvableLinks.getEntries<TypeRecipeSkeleton>(searchParams)
 
   return response.items.map((item) => item.fields)
 }

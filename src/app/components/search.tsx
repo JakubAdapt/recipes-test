@@ -1,12 +1,19 @@
 'use-client'
 
-import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { FormEvent, useState } from 'react'
 
 const Search = () => {
+  const router = useRouter()
   const [text, setText] = useState('')
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    router.push(`/recipes?search=${text}`)
+  }
+
   return (
-    <div className="">
+    <form className="" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Search recipes..."
@@ -14,7 +21,7 @@ const Search = () => {
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-    </div>
+    </form>
   )
 }
 

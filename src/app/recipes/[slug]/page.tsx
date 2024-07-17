@@ -1,10 +1,10 @@
 import ContentfulImage from '@app/components/contentful-image'
 import { PageParams } from '@typings/PageParams'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { getRecipes } from '@services/getRecipes'
+import { getRecipe } from '@services/getRecipe'
 
 export default async function RecipePage({ params }: PageParams) {
-  const recipe = await getRecipes(params.slug)
+  const recipe = await getRecipe(params.slug)
 
   return (
     <div className="relative h-screen bg-black">

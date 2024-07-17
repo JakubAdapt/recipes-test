@@ -14,6 +14,7 @@ const Hero = ({ image, heading }: Props) => {
           alt={image.fields.title || ''}
           src={image.fields.file?.url || ''}
           className="opacity-50"
+          priority
         />
       )}
 
