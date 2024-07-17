@@ -17,7 +17,7 @@ const Search = () => {
       <input
         type="text"
         placeholder="Search recipes..."
-        className="block w-full rounded-md border-0 p-1 text-orange"
+        className="block w-full rounded-b border border-t-0 border-gray bg-black/80 p-2 text-white outline-0 backdrop-blur-sm"
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
