@@ -1,7 +1,7 @@
-import Hero from '@app/components/Hero'
-import Content from '@app/components/Content'
-import CategoriesList from '@app/components/CategoriesList'
+import CategoriesList from '@app/components/categories-list'
 import { getPage } from '@services/getPage'
+import Hero from '@app/components/hero'
+import Content from '@app/components/content'
 
 export default async function Home() {
   const page = await getPage('home')
@@ -13,7 +13,7 @@ export default async function Home() {
 
       <CategoriesList />
 
-      {sections && <Content content={sections} />}
+      {sections && <Content contentBody={sections} />}
     </div>
   )
 }

@@ -1,16 +1,16 @@
 import { Entry, EntrySkeletonType } from 'contentful'
-import Button from '@app/components/Button'
+import Button from '@app/components/button'
 import { isButton } from '@utils/isButton'
 import { ReactNode } from 'react'
 
 type Props = {
-  content: (Entry<EntrySkeletonType, 'WITHOUT_UNRESOLVABLE_LINKS', string> | undefined)[]
+  contentBody: (Entry<EntrySkeletonType, 'WITHOUT_UNRESOLVABLE_LINKS', string> | undefined)[]
 }
 
-const Content = ({ content }: Props) => {
+const Content = ({ contentBody }: Props) => {
   const displayContent: ReactNode[] = []
 
-  content.forEach((section) => {
+  contentBody.forEach((section) => {
     if (section) {
       if (isButton(section)) {
         displayContent.push(<Button data={section} />)

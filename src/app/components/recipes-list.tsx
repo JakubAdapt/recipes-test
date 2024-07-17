@@ -1,5 +1,5 @@
 import { RecipeFields } from '@services/getRecipes'
-import RecipeCard from '@app/components/RecipeCard'
+import RecipeCard from '@app/components/recipe-card'
 
 type Props = {
   recipes: RecipeFields[]

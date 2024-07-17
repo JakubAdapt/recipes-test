@@ -1,7 +1,7 @@
-import Hero from '@app/components/Hero'
+import Hero from '@app/components/hero'
 import { getPage } from '@services/getPage'
 import { getRecipes } from '@services/getRecipes'
-import RecipesList from '@app/components/RecipesList'
+import RecipesList from '@app/components/recipes-list'
 
 export default async function RecipesPage() {
   const page = await getPage('recipes')

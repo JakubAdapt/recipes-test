@@ -1,4 +1,4 @@
-import ContentfulImage from '@app/components/ContentfulImage'
+import ContentfulImage from '@app/components/contentful-image'
 import { PageParams } from '@typings/PageParams'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { getRecipes } from '@services/getRecipes'
@@ -19,7 +19,7 @@ export default async function RecipePage({ params }: PageParams) {
         )}
 
         {/* Custom gradient overlay */}
-        <div className="via-black/10 absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black"></div>
       </div>
 
       {/* Content container */}

@@ -1,5 +1,4 @@
-import type { HeroType } from '@typings/Hero'
-import ContentfulImage from '@app/components/ContentfulImage'
+import ContentfulImage from '@app/components/contentful-image'
 import { Asset } from 'contentful'
 
 type Props = {

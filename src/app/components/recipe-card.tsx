@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import ContentfulImage from '@app/components/ContentfulImage'
+import ContentfulImage from '@app/components/contentful-image'
 import type { RecipeFields } from '@services/getRecipes'
 
 type Props = {
@@ -22,7 +22,7 @@ const RecipeCard = ({ data }: Props) => {
           )}
         </div>
 
-        <div className="bg-black/50 absolute bottom-0 left-0 right-0 flex justify-between rounded-b-lg px-2 py-1 text-white backdrop-blur-sm">
+        <div className="absolute bottom-0 left-0 right-0 flex justify-between rounded-b-lg bg-black/50 px-2 py-1 text-white backdrop-blur-sm">
           <h2 className="text-lg">{name}</h2>
 
           <div className="flex flex-col space-y-1 text-sm">

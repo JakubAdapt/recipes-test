@@ -1,5 +1,5 @@
-import Hero from '@app/components/Hero'
-import RecipesList from '@app/components/RecipesList'
+import Hero from '@app/components/hero'
+import RecipesList from '@app/components/recipes-list'
 import { getCategories } from '@services/getCategories'
 import { getRecipesByCategory } from '@services/getRecipesByCategory'
 import { PageParams } from '@typings/PageParams'
