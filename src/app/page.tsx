@@ -8,7 +8,7 @@ export default async function Home() {
   const { hero, sections } = page
 
   return (
-    <div className="space-y-4 pb-4">
+    <div className="space-y-4 pb-4 md:space-y-6 md:pb-6">
       {hero && <Hero image={hero.fields.image} heading={hero.fields.heading} />}
 
       <CategoriesList />

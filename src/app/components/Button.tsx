@@ -20,7 +20,11 @@ const Button = ({ label, link, variant = 'primary' }: Props) => {
   )
 
   if (link) {
-    return <Link href={link}>{buttonTag}</Link>
+    return (
+      <Link href={link} className="w-full">
+        {buttonTag}
+      </Link>
+    )
   }
 
   return buttonTag

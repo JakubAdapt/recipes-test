@@ -9,7 +9,7 @@ export default async function CategoryPage({ params }: PageParams) {
   const recipes = await getRecipesByCategory(params.slug)
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 md:space-y-6">
       <Hero image={category.image} heading={category.title} />
 
       <RecipesList recipes={recipes} />

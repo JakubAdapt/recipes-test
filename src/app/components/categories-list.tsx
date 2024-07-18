@@ -6,7 +6,7 @@ const CategoriesList = async () => {
   const categories = await getCategories()
 
   return (
-    <div className="grid grid-cols-2 gap-4 px-4">
+    <div className="grid grid-cols-2 gap-4 px-4 md:grid-cols-4 md:gap-6 md:px-6">
       {categories.map((category, index) => (
         <Link
           href={`category/${category.slug}`}

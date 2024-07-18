@@ -19,9 +19,11 @@ const Content = ({ contentBody }: Props) => {
   })
 
   return (
-    <div className="px-4">
+    <div className="flex flex-col items-center px-4 md:px-6">
       {displayContent.map((content, index) => (
-        <div key={index}>{content}</div>
+        <div key={index} className="w-full md:w-1/2">
+          {content}
+        </div>
       ))}
     </div>
   )

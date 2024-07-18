@@ -16,7 +16,7 @@ export default async function RecipesPage({
   const hero = page.hero
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 md:space-y-6">
       {hero && <Hero image={hero.fields.image} heading={hero.fields.heading} />}
 
       <RecipesList recipes={recipes} />

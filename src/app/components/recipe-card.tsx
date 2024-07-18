@@ -12,9 +12,9 @@ const RecipeCard = ({ data }: Props) => {
   const { image, name, level, time, slug } = data
 
   return (
-    <Link href={`/recipes/${slug}`} className="block">
-      <div className="relative rounded-lg">
-        <div className="w-full">
+    <Link href={`/recipes/${slug}`} className="block h-56">
+      <div className="relative h-full rounded-lg">
+        <div className="h-full w-full">
           {image && (
             <ContentfulImage
               alt={image.fields.title || ''}
