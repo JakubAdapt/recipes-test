@@ -23,7 +23,6 @@
       "@services/*": ["services/*"],
       "@typings/*": ["typings/*"],
       "@utils/*": ["utils/*"],
-      "@assets/*": ["assets/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
