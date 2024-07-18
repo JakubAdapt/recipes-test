@@ -1,19 +1,26 @@
-import type { ButtonType } from '@typings/Button'
+import clsx from 'clsx'
 import Link from 'next/link'
 
 type Props = {
-  data: ButtonType
+  label: string
+  link?: string | undefined
+  variant?: 'primary' | 'link'
 }
 
-const Button = ({ data }: Props) => {
+const Button = ({ label, link, variant = 'primary' }: Props) => {
   const buttonTag = (
-    <button className="w-full rounded bg-orange px-4 py-2 text-off-black">
-      {data.fields.label}
+    <button
+      className={clsx('w-full rounded px-4 py-2', {
+        'bg-orange text-off-black': variant === 'primary',
+        'bg-transparent text-yellow underline': variant === 'link',
+      })}
+    >
+      {label}
     </button>
   )
 
-  if (data.fields.link) {
-    return <Link href={data.fields.link}>{buttonTag}</Link>
+  if (link) {
+    return <Link href={link}>{buttonTag}</Link>
   }
 
   return buttonTag

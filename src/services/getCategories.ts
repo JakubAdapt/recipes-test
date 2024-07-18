@@ -20,6 +20,10 @@ export async function getCategories(
     }
   )
 
+  if (!response.items.length) {
+    throw new Error('Category not found')
+  }
+
   if (categorySlug) {
     return response.items[0].fields
   }

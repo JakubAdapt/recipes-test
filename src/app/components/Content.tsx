@@ -13,7 +13,7 @@ const Content = ({ contentBody }: Props) => {
   contentBody.forEach((section) => {
     if (section) {
       if (isButton(section)) {
-        displayContent.push(<Button data={section} />)
+        displayContent.push(<Button label={section.fields.label} link={section.fields.link} />)
       }
     }
   })

@@ -15,5 +15,9 @@ export async function getRecipe(slug: string): Promise<RecipeFields> {
     include: 2,
   })
 
+  if (!response.items.length) {
+    throw new Error('Recipe not found')
+  }
+
   return response.items[0].fields
 }

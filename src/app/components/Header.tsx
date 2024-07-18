@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import { MagnifyingGlassIcon, ArrowLeftIcon } from '@heroicons/react/24/solid'
 import Search from '@app/components/search'
 import { useState } from 'react'
@@ -9,6 +9,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 export const Header = () => {
   const router = useRouter()
+  const pathname = usePathname()
   const [isSearchVisible, setIsSearchVisible] = useState(false)
 
   const toggleSearch = () => {
@@ -23,9 +24,13 @@ export const Header = () => {
   return (
     <div className="relative">
       <header className="fixed top-0 z-30 flex w-full items-center justify-between bg-black p-4 text-white">
-        <ArrowLeftIcon onClick={() => router.back()} className="h-6 w-6">
-          Back
-        </ArrowLeftIcon>
+        {pathname !== '/' ? (
+          <ArrowLeftIcon onClick={() => router.back()} className="h-6 w-6">
+            Back
+          </ArrowLeftIcon>
+        ) : (
+          <div></div>
+        )}
 
         <Link href="/" className="text-2xl font-bold">
           Home
