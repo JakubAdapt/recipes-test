@@ -12,10 +12,6 @@ export const Header = () => {
   const pathname = usePathname()
   const [isSearchVisible, setIsSearchVisible] = useState(false)
 
-  const toggleSearch = () => {
-    setIsSearchVisible((prev) => !prev)
-  }
-
   const variants = {
     hidden: { y: 0, opacity: 0 },
     visible: { y: 64, opacity: 1 },
@@ -36,7 +32,7 @@ export const Header = () => {
           Home
         </Link>
 
-        <MagnifyingGlassIcon className="h-6 w-6" onClick={toggleSearch} />
+        <MagnifyingGlassIcon className="h-6 w-6" onClick={() => setIsSearchVisible(true)} />
       </header>
 
       <AnimatePresence>
@@ -49,7 +45,7 @@ export const Header = () => {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="fixed left-0 right-0 top-0 z-20"
           >
-            <Search />
+            <Search handleClickOutside={() => setIsSearchVisible(false)} />
           </motion.div>
         )}
       </AnimatePresence>

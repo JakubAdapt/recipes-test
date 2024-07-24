@@ -2,11 +2,19 @@
 
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { useRouter } from 'next/navigation'
-import { FormEvent, useState } from 'react'
+import { FormEvent, useRef, useState } from 'react'
+import { useOnClickOutside } from 'usehooks-ts'
 
-const Search = () => {
+type Props = {
+  handleClickOutside: () => void
+}
+
+const Search = ({ handleClickOutside }: Props) => {
+  const ref = useRef(null)
   const router = useRouter()
   const [text, setText] = useState('')
+
+  useOnClickOutside(ref, handleClickOutside)
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -14,8 +22,9 @@ const Search = () => {
   }
 
   return (
-    <form className="relative" onSubmit={handleSubmit}>
+    <form className="relative" onSubmit={handleSubmit} ref={ref}>
       <input
+        autoFocus
         type="text"
         placeholder="Search recipes..."
         className="block w-full border-b border-gray bg-black/80 px-10 py-3 text-white outline-0 backdrop-blur-sm"
