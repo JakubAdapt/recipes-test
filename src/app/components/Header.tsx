@@ -19,7 +19,7 @@ export const Header = () => {
 
   return (
     <div className="relative">
-      <header className="fixed top-0 z-30 flex w-full items-center justify-between bg-black p-4 text-white">
+      <header className="fixed top-0 z-30 flex w-full items-center justify-between border-b border-gray bg-black p-4 text-white">
         {pathname !== '/' ? (
           <ArrowLeftIcon onClick={() => router.back()} className="h-6 w-6">
             Back

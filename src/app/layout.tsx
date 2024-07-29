@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={clsx(inter.className, 'bg-black')}>
         <Header />
-        <main className="mb-4 mt-12">{children}</main>
+        <main className="mx-auto mb-4 mt-12 max-w-5xl">{children}</main>
       </body>
     </html>
   )
