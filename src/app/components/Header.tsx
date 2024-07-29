@@ -25,7 +25,7 @@ export const Header = () => {
             Back
           </ArrowLeftIcon>
         ) : (
-          <div></div>
+          <div className="w-6"></div>
         )}
 
         <Link href="/" className="text-2xl font-bold">

@@ -15,10 +15,7 @@ export default function ErrorBoundary({ error }: { error: Error }) {
         style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.5 }}
       />
       <div className="absolute top-1/2 flex -translate-y-1/2 flex-col items-center gap-4">
-        <p
-          className="text-center text-3xl tracking-widest text-yellow"
-          style={{ fontFamily: 'fantasy' }}
-        >
+        <p className="font-not-found text-center text-3xl tracking-widest text-yellow">
           {/* {error.message} on production it shows long message instead of this */}
           Recipe not found
         </p>

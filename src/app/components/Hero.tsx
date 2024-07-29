@@ -18,10 +18,7 @@ const Hero = ({ image, heading }: Props) => {
         />
       )}
 
-      <h1
-        style={{ textShadow: '1px 1px #FF652F', fontFamily: 'cursive' }}
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform whitespace-nowrap px-1 py-[2px] text-2xl font-semibold text-off-black backdrop-blur-sm md:text-4xl"
-      >
+      <h1 className="hero-text-shadow font-hero absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform whitespace-nowrap px-2 pb-1 text-center text-2xl font-semibold text-off-black backdrop-blur-sm md:text-4xl">
         {heading}
       </h1>
     </div>

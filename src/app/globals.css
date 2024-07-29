@@ -29,3 +29,13 @@
   font-size: 18px;
   font-weight: 500;
 }
+
+.hero-text-shadow {
+  text-shadow: 2px 2px #ff652f;
+}
+
+@media (min-width: 768px) {
+  .hero-text-shadow {
+    text-shadow: 3px 3px #ff652f;
+  }
+}

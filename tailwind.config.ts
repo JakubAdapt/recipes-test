@@ -15,6 +15,11 @@ const config: Config = {
         'off-black': 'hsl(var(--color-off-black) / <alpha-value>)',
         'off-white': 'hsl(var(--color-off-white) / <alpha-value>)',
       },
+
+      fontFamily: {
+        hero: 'var(--font-permanent-marker)',
+        'not-found': 'var(--font-medival-sharp)',
+      },
     },
   },
   plugins: [],
