@@ -1,15 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Recipes Website - hobby project
+
+A personal web project to store and browse my favorite recipes.
+
+## Hosting
+
+https://recipes-jakub.vercel.app/
+
+## Overview
+
+This website serves as a digital cookbook, allowing me to keep all my cherished recipes in one convenient location. It's a hobby project that combines my love for cooking (or rather eating...) with web development.
+
+## Features
+
+- Recipe browsing
+- Search functionality
+- Filter recipes by: category, difficulty, preparation time
+- Content management using Contentful CMS
+
+## Technical Stack
+
+- Next.js
+- Tailwindcss
+- Contentful
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Build project and fetch Contentful types:
+
+```bash
+npm run build
+```
+
+Run the development server:
 
 ```bash
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
