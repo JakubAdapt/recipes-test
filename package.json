@@ -11,6 +11,7 @@
     "type-check": "tsc --pretty --noEmit",
     "format:check": "prettier --check './src/**/*.{ts,tsx,js,jsx}'",
     "format:fix": "prettier --write './src/**/*.{ts,tsx,js,jsx}'",
+    "codegen": "graphql-codegen --require dotenv/config --config codegen.ts",
     "contentful-export-types": "dotenv expose-env -- contentful space export --config contentful/export-config.json --management-token %CONTENTFUL_CODEGEN_TOKEN% --space-id %CONTENTFUL_SPACE_ID%",
     "contentful-generate-types": "cf-content-types-generator --v10 contentful/export.json --out src/typings/contentful/generated-types"
   },
@@ -20,6 +21,8 @@
     "clsx": "^2.1.1",
     "contentful": "^10.11.10",
     "framer-motion": "^11.3.5",
+    "graphql": "^16.9.0",
+    "graphql-request": "^6.1.0",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
@@ -27,6 +30,11 @@
     "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/introspection": "^4.0.3",
+    "@graphql-codegen/typescript": "^4.0.9",
+    "@graphql-codegen/typescript-graphql-request": "^6.2.0",
+    "@graphql-codegen/typescript-operations": "^4.2.3",
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
