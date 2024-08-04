@@ -1,7 +1,6 @@
 fragment Hero on Hero {
   heading
   image {
-    url
-    title
+    ...Image
   }
 }

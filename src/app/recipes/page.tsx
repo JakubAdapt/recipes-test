@@ -11,6 +11,10 @@ export default async function RecipesPage({
   const page = await getPage('recipes')
   const recipes = await getRecipes(searchParams.search)
 
+  if (recipes.isErr() || !recipes.value) {
+    throw new Error('Failed to load recipes')
+  }
+
   let hero
 
   if (page.isOk() && page.value) {
@@ -21,11 +25,7 @@ export default async function RecipesPage({
     <div className="space-y-4 md:space-y-6">
       {hero && <Hero image={hero.image} heading={hero.heading} />}
 
-      {recipes.isOk() && recipes.value ? (
-        <RecipesList recipes={recipes.value} />
-      ) : (
-        <div>Failed to load recipes</div>
-      )}
+      <RecipesList recipes={recipes.value} />
     </div>
   )
 }

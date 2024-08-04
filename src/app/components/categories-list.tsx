@@ -5,9 +5,13 @@ import Link from 'next/link'
 const CategoriesList = async () => {
   const categories = await getCategories()
 
+  if (categories.isErr() || !categories.value) {
+    return <div>Failed to load categories</div>
+  }
+
   return (
     <div className="grid grid-cols-2 gap-4 px-4 sm:grid-cols-4 sm:gap-6 sm:px-6">
-      {categories.map((category, index) => (
+      {categories.value.map((category, index) => (
         <Link
           href={`category/${category.slug}`}
           key={index}
@@ -15,8 +19,8 @@ const CategoriesList = async () => {
         >
           {category.image && (
             <ContentfulImage
-              alt={category.image.fields.title || ''}
-              src={category.image.fields.file?.url || ''}
+              alt={category.image.title}
+              src={category.image.url}
               className="rounded-t-md"
             />
           )}

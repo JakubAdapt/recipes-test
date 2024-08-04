@@ -5,14 +5,23 @@ import { getRecipesByCategory } from '@services/getRecipesByCategory'
 import { PageParams } from '@typings/PageParams'
 
 export default async function CategoryPage({ params }: PageParams) {
-  const category = await getCategories(params.slug)
+  const categories = await getCategories(params.slug)
   const recipes = await getRecipesByCategory(params.slug)
+
+  let hero
+
+  if (categories.isOk() && categories.value) {
+    hero = {
+      image: categories.value[0].image,
+      heading: categories.value[0].title,
+    }
+  }
 
   return (
     <div className="space-y-4 md:space-y-6">
-      <Hero image={category.image} heading={category.title} />
+      {hero && <Hero image={hero.image} heading={hero.heading} />}
 
-      <RecipesList recipes={recipes} />
+      {/* <RecipesList recipes={recipes} /> */}
     </div>
   )
 }

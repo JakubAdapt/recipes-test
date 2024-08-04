@@ -10,8 +10,8 @@ export const recipeSchema = z.object({
   instruction: z.object({
     json: z.any(),
   }),
-  time: z.number().optional(),
-  level: z.enum(['Average', 'Easy', 'Hard']).optional(),
+  time: z.number().optional().nullable(),
+  level: z.enum(['Average', 'Easy', 'Hard']).optional().nullable(),
   image: assetSchema.optional(),
 })
 
