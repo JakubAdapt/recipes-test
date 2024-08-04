@@ -11,11 +11,15 @@ export default async function RecipesPage({
   const page = await getPage('recipes')
   const recipes = await getRecipes(searchParams.search)
 
-  const hero = page.hero
+  let hero
+
+  if (page.isOk() && page.value) {
+    hero = page.value[0].hero
+  }
 
   return (
     <div className="space-y-4 md:space-y-6">
-      {/* {hero && <Hero image={hero.fields.image} heading={hero.fields.heading} />} */}
+      {hero && <Hero image={hero.image} heading={hero.heading} />}
 
       {recipes.isOk() && recipes.value ? (
         <RecipesList recipes={recipes.value} />
