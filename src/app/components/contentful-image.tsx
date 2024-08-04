@@ -5,7 +5,6 @@ type Props = ImageProps & {
 }
 
 const ContentfulImage = ({ alt, src, ...props }: Props) => {
-  console.log(src)
   return (
     <Image
       src={src}
