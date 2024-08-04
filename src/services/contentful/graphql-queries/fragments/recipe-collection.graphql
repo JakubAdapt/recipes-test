@@ -1,12 +1,6 @@
 fragment RecipeCollection on Recipe {
   name
   slug
-  ingredients {
-    json
-  }
-  instruction {
-    json
-  }
   time
   level
   image {

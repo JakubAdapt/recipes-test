@@ -1,4 +1,4 @@
-import { getContentfulClient } from './contentful/contentful-client'
+import { getContentfulClient } from '@services/contentful/contentful-client'
 import { err, ok, ResultAsync } from 'neverthrow'
 import { z } from 'zod'
 import { recipeCollectionSchema } from '@typings/models/recipe-collection.model'

@@ -15,9 +15,7 @@ const RecipeCard = ({ data }: Props) => {
     <Link href={`/recipes/${slug}`} className="block h-56">
       <div className="relative h-full rounded-lg">
         <div className="h-full w-full">
-          {image && (
-            <ContentfulImage alt={image.title || ''} src={image.url || ''} className="rounded-lg" />
-          )}
+          {image && <ContentfulImage alt={image.title} src={image.url} className="rounded-lg" />}
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 flex h-[52px] justify-between rounded-b-lg bg-black/50 px-2 py-1 text-white backdrop-blur-sm">

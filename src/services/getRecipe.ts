@@ -1,23 +1,25 @@
-import { contentFulClient } from '@services/contentful'
-import { TypeRecipeSkeleton } from '@typings/contentful/generated-types'
-import { EntryCollection } from 'contentful'
+import { getContentfulClient } from '@services/contentful/contentful-client'
+import { err, ok, ResultAsync } from 'neverthrow'
+import { z } from 'zod'
+import intoError from '@utils/intoError'
+import { recipeSchema } from '@typings/models/recipe.model'
 
-export type RecipeFields = EntryCollection<
-  TypeRecipeSkeleton,
-  'WITHOUT_UNRESOLVABLE_LINKS',
-  string
->['items'][number]['fields']
+export async function getRecipe(slug: string) {
+  const recipeResponse = await ResultAsync.fromPromise(
+    getContentfulClient()
+      .getRecipe({ slug })
+      .then((response) => {
+        if (!response.recipeCollection || response.recipeCollection?.items?.length === 0) {
+          return null
+        }
+        return z.array(recipeSchema).parse(response.recipeCollection?.items)
+      }),
+    (error) => intoError(error, 'Recipe not found')
+  )
 
-export async function getRecipe(slug: string): Promise<RecipeFields> {
-  const response = await contentFulClient.withoutUnresolvableLinks.getEntries<TypeRecipeSkeleton>({
-    content_type: 'recipe',
-    'fields.slug': slug,
-    include: 2,
-  })
-
-  if (!response.items.length) {
-    throw new Error('Recipe not found')
+  if (recipeResponse.isErr()) {
+    return err(recipeResponse.error)
   }
 
-  return response.items[0].fields
+  return ok(recipeResponse.value)
 }
