@@ -5,9 +5,10 @@ type Props = ImageProps & {
 }
 
 const ContentfulImage = ({ alt, src, ...props }: Props) => {
+  console.log(src)
   return (
     <Image
-      src={src.replace('//', 'https://')}
+      src={src}
       alt={alt}
       width={0}
       height={0}

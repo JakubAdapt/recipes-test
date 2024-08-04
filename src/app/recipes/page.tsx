@@ -9,17 +9,19 @@ export default async function RecipesPage({
   searchParams: { [key: string]: string | undefined }
 }) {
   const page = await getPage('recipes')
-  const recipes = await getRecipes(
-    typeof searchParams.search === 'string' ? searchParams.search : undefined
-  )
+  const recipes = await getRecipes(searchParams.search)
 
   const hero = page.hero
 
   return (
     <div className="space-y-4 md:space-y-6">
-      {hero && <Hero image={hero.fields.image} heading={hero.fields.heading} />}
+      {/* {hero && <Hero image={hero.fields.image} heading={hero.fields.heading} />} */}
 
-      <RecipesList recipes={recipes} />
+      {recipes.isOk() && recipes.value ? (
+        <RecipesList recipes={recipes.value} />
+      ) : (
+        <div>Failed to load recipes</div>
+      )}
     </div>
   )
 }

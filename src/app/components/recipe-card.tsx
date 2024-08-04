@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import ContentfulImage from '@app/components/contentful-image'
-import type { RecipeFields } from '@services/getRecipes'
 import { Time } from '@app/components/time'
 import { Level } from '@app/components/level'
+import { RecipeCollectionType } from '@typings/models/recipe-collection.model'
 
 type Props = {
-  data: RecipeFields
+  data: RecipeCollectionType
 }
 
 const RecipeCard = ({ data }: Props) => {
@@ -16,11 +16,7 @@ const RecipeCard = ({ data }: Props) => {
       <div className="relative h-full rounded-lg">
         <div className="h-full w-full">
           {image && (
-            <ContentfulImage
-              alt={image.fields.title || ''}
-              src={image.fields.file?.url || ''}
-              className="rounded-lg"
-            />
+            <ContentfulImage alt={image.title || ''} src={image.url || ''} className="rounded-lg" />
           )}
         </div>
 

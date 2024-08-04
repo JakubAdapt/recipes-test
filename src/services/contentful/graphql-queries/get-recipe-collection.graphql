@@ -1,5 +1,5 @@
-query getRecipeCollection {
-  recipeCollection {
+query getRecipeCollection($name: String) {
+  recipeCollection(where: { name_contains: $name }) {
     items {
       ...RecipeCollection
     }

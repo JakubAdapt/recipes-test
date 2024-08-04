@@ -1,8 +1,8 @@
-import { RecipeFields } from '@services/getRecipes'
 import RecipeCard from '@app/components/recipe-card'
+import { RecipeCollectionType } from '@typings/models/recipe-collection.model'
 
 type Props = {
-  recipes: RecipeFields[]
+  recipes: RecipeCollectionType[]
 }
 
 const RecipesList = ({ recipes }: Props) => {
