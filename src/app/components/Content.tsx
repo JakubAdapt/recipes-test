@@ -1,10 +1,10 @@
-import { Entry, EntrySkeletonType } from 'contentful'
 import Button from '@app/components/button'
+import { SectionType } from '@typings/models/section.model'
 import { isButton } from '@utils/isButton'
 import { ReactNode } from 'react'
 
 type Props = {
-  contentBody: (Entry<EntrySkeletonType, 'WITHOUT_UNRESOLVABLE_LINKS', string> | undefined)[]
+  contentBody: SectionType[]
 }
 
 const Content = ({ contentBody }: Props) => {
@@ -13,7 +13,7 @@ const Content = ({ contentBody }: Props) => {
   contentBody.forEach((section) => {
     if (section) {
       if (isButton(section)) {
-        displayContent.push(<Button label={section.fields.label} link={section.fields.link} />)
+        displayContent.push(<Button label={section.label} link={section.link} />)
       }
     }
   })

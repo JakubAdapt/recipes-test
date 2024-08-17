@@ -10,7 +10,9 @@ export default async function Home() {
     throw new Error('Failed to load page')
   }
 
-  const { hero } = page.value[0]
+  const { hero, sectionsCollection } = page.value[0]
+
+  const contentItems = sectionsCollection.items
 
   return (
     <div className="space-y-4 pb-4 md:space-y-6 md:pb-6">
@@ -18,7 +20,7 @@ export default async function Home() {
 
       <CategoriesList />
 
-      {/* {sections && <Content contentBody={sections} />} */}
+      {contentItems.length && <Content contentBody={contentItems} />}
     </div>
   )
 }

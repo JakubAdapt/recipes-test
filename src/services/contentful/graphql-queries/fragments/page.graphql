@@ -3,4 +3,10 @@ fragment Page on LandingPage {
   hero {
     ...Hero
   }
+  sectionsCollection(limit: 10) {
+    items {
+      __typename
+      ...Button
+    }
+  }
 }
