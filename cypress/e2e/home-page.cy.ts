@@ -27,7 +27,7 @@ for (const viewport of viewports) {
     })
 
     it('can click "Show all recipes" button and navigate to Recipes Page', () => {
-      cy.findByRole('button', { name: /Show all recipes/i }).click()
+      cy.findByRole('button', { name: /Show all recipes/i }).click() // replace to mock later
       cy.url().should('include', '/recipes')
     })
   })

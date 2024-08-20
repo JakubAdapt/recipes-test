@@ -5,8 +5,10 @@ import { useRouter } from 'next/navigation'
 import { FormEvent, useRef, useState } from 'react'
 import { useOnClickOutside } from 'usehooks-ts'
 
+export type ClickOutsideEvent = MouseEvent | TouchEvent | FocusEvent
+
 type Props = {
-  handleClickOutside: () => void
+  handleClickOutside: (event: ClickOutsideEvent) => void
 }
 
 const Search = ({ handleClickOutside }: Props) => {
@@ -14,7 +16,7 @@ const Search = ({ handleClickOutside }: Props) => {
   const router = useRouter()
   const [text, setText] = useState('')
 
-  useOnClickOutside(ref, handleClickOutside)
+  useOnClickOutside(ref, (event) => handleClickOutside(event))
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
