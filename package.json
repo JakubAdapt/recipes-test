@@ -11,7 +11,9 @@
     "type-check": "tsc --pretty --noEmit",
     "format:check": "prettier --check './src/**/*.{ts,tsx,js,jsx}'",
     "format:fix": "prettier --write './src/**/*.{ts,tsx,js,jsx}'",
-    "codegen": "graphql-codegen --require dotenv/config --config codegen.ts"
+    "codegen": "graphql-codegen --require dotenv/config --config codegen.ts",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.21.2",
@@ -36,6 +38,8 @@
     "@graphql-codegen/typescript": "^4.0.9",
     "@graphql-codegen/typescript-graphql-request": "^6.2.0",
     "@graphql-codegen/typescript-operations": "^4.2.3",
+    "@testing-library/cypress": "^10.0.2",
+    "@testing-library/jest-dom": "^6.4.8",
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -43,6 +47,7 @@
     "@typescript-eslint/parser": "^7.16.0",
     "cf-content-types-generator": "^2.15.2",
     "contentful-cli": "^3.3.2",
+    "cypress": "^13.13.3",
     "dotenv-cli": "^7.4.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",

@@ -22,6 +22,8 @@ This website serves as a digital cookbook, allowing me to keep all my cherished 
 - Next.js
 - Tailwindcss
 - Contentful
+- GraphQL
+- Cypress
 
 ## Getting Started
 
