@@ -1,18 +1,34 @@
-describe('Home Page', () => {
-  beforeEach(() => {
-    cy.visit('/')
-  })
+import { viewports } from '../utils'
 
-  it('should display Home link', () => {
-    const homeLink = cy.findByRole('link', { name: /Home/i }).should('be.visible')
-    homeLink.should('have.attr', 'href', '/')
-  })
+for (const viewport of viewports) {
+  describe(`Home Page on ${viewport.title}`, () => {
+    beforeEach(() => {
+      cy.visit('/')
+      cy.viewport(viewport.device)
+    })
 
-  it('should display title', () => {
-    cy.findByRole('heading', { name: /Recipes website/i }).should('be.visible')
-  })
+    it('should display Home link', () => {
+      const homeLink = cy.findByRole('link', { name: /Home/i }).should('be.visible')
+      homeLink.should('have.attr', 'href', '/')
+    })
 
-  it('should display "Show all recipes" button', () => {
-    cy.findByRole('button', { name: /Show all recipes/i }).should('be.visible')
+    it('should display title', () => {
+      cy.findByRole('heading', { name: /Recipes website/i }).should('be.visible')
+    })
+
+    it('can open and hide search form', () => {
+      cy.findByPlaceholderText(/Search recipes.../i).should('not.exist')
+
+      cy.findByLabelText('search-icon', { selector: 'svg' }).click()
+      cy.findByPlaceholderText(/Search recipes.../i).should('be.visible')
+
+      cy.findByRole('heading', { name: /Recipes website/i }).click()
+      cy.findByPlaceholderText(/Search recipes.../i).should('not.exist')
+    })
+
+    it('can click "Show all recipes" button and navigate to Recipes Page', () => {
+      cy.findByRole('button', { name: /Show all recipes/i }).click()
+      cy.url().should('include', '/recipes')
+    })
   })
-})
+}

@@ -36,7 +36,7 @@ const Search = ({ handleClickOutside }: Props) => {
       <XMarkIcon
         onClick={() => setText('')}
         width={24}
-        className="absolute right-2 top-3"
+        className="absolute right-2 top-3 cursor-pointer"
         fill="#747474"
       />
     </form>

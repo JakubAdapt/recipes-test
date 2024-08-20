@@ -32,7 +32,11 @@ export const Header = () => {
           Home
         </Link>
 
-        <MagnifyingGlassIcon className="h-6 w-6" onClick={() => setIsSearchVisible(true)} />
+        <MagnifyingGlassIcon
+          className="h-6 w-6 cursor-pointer"
+          onClick={() => setIsSearchVisible(true)}
+          aria-label="search-icon"
+        />
       </header>
 
       <AnimatePresence>
