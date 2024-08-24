@@ -12,4 +12,9 @@ fragment Recipe on Recipe {
   image {
     ...Image
   }
+  tagsCollection {
+    items {
+      ...Tag
+    }
+  }
 }

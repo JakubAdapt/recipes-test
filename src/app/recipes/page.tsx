@@ -2,6 +2,7 @@ import Hero from '@app/components/hero'
 import { getPage } from '@services/getPage'
 import { getRecipes } from '@services/getRecipes'
 import RecipesList from '@app/components/recipes-list'
+import { Filters } from '@app/components/filters'
 
 export default async function RecipesPage({
   searchParams,
@@ -24,6 +25,8 @@ export default async function RecipesPage({
   return (
     <div className="space-y-4 md:space-y-6">
       {hero && <Hero image={hero.image} heading={hero.heading} />}
+
+      <Filters />
 
       <RecipesList recipes={recipes.value} />
     </div>

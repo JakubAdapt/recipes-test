@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import { assetSchema } from '@typings/models/asset.model'
+import { levelSchema } from '@typings/models/level.model'
 
 export const recipeSchema = z.object({
   name: z.string(),
@@ -11,7 +12,7 @@ export const recipeSchema = z.object({
     json: z.any(),
   }),
   time: z.number().optional().nullable(),
-  level: z.enum(['Average', 'Easy', 'Hard']).optional().nullable(),
+  level: levelSchema.optional().nullable(),
   image: assetSchema.optional(),
 })
 

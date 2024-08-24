@@ -7,3 +7,5 @@ export const categoryCollectionSchema = z.object({
   description: z.string().optional().nullable(),
   image: assetSchema.optional(),
 })
+
+export type CategoryCollectionType = z.infer<typeof categoryCollectionSchema>
