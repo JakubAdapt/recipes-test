@@ -11,9 +11,10 @@ export type SelectOption = {
 type Props = {
   options: SelectOption[]
   label: string
+  handleOnChange: (value: SelectOption | null) => void
 }
 
-export const Select = ({ options, label }: Props) => {
+export const Select = ({ options, label, handleOnChange }: Props) => {
   return (
     <div className="w-full space-y-1">
       <label className="text-sm text-white" htmlFor={label}>
@@ -27,6 +28,7 @@ export const Select = ({ options, label }: Props) => {
         options={options}
         openMenuOnFocus
         isClearable
+        onChange={handleOnChange}
         components={{
           Input: (props) => <components.Input {...props} aria-activedescendant={undefined} />,
         }}
@@ -34,10 +36,10 @@ export const Select = ({ options, label }: Props) => {
           control: (provided, state) => ({
             ...provided,
             width: '100%',
-            backgroundColor: '#373A40',
-            borderColor: state.isFocused ? '#EDEDED' : '#686D76',
+            backgroundColor: '#373A40', // TODO refactor colors
+            borderColor: state.isFocused ? '#EDEDED' : '#686D76', // TODO refactor colors
             '&:hover': {
-              borderColor: '#EDEDED',
+              borderColor: '#EDEDED', // TODO refactor colors
             },
             color: 'white',
             cursor: 'text',

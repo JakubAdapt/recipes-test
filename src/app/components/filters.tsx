@@ -1,42 +1,46 @@
-import { getCategories } from '@services/getCategories'
-import { getTags } from '@services/getTags'
-import { Select, SelectOption } from './select'
+'use client'
+import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 
-export const Filters = async () => {
-  const categories = await getCategories()
-  const tags = await getTags()
+import { Select, SelectOption } from '@app/components/select'
 
-  let categoryOptions: SelectOption[] = []
+type Props = {
+  categoryOptions: SelectOption[]
+  tagsOptions: SelectOption[]
+  levelOptions: SelectOption[]
+}
 
-  if (categories.isOk() && categories.value) {
-    categoryOptions = categories.value.map(({ slug, title }) => ({
-      value: slug,
-      label: title,
-    }))
+export const Filters = ({ categoryOptions, tagsOptions, levelOptions }: Props) => {
+  const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+
+  const onSetFilter = (type: 'category' | 'tag' | 'level', event: SelectOption | null) => {
+    const params = new URLSearchParams(searchParams.toString())
+
+    if (event?.value) {
+      params.set(type, event.value)
+    } else {
+      params.delete(type)
+    }
+
+    router.push(`${pathname}?${params.toString()}`)
   }
-
-  let tagsOptions: SelectOption[] = []
-
-  if (tags.isOk() && tags.value) {
-    tagsOptions = tags.value.map(({ name }) => ({
-      value: name,
-      label: name,
-    }))
-  }
-
-  const levelOptions: SelectOption[] = [
-    { value: 'Easy', label: 'Easy' },
-    { value: 'Average', label: 'Average' },
-    { value: 'Hard', label: 'Hard' },
-  ]
 
   return (
-    <div className="items-baseline justify-between gap-3 space-y-4 px-4 sm:flex">
-      <Select options={categoryOptions} label={'Category'} />
+    <>
+      <Select
+        options={categoryOptions}
+        label={'Category'}
+        handleOnChange={(e) => onSetFilter('category', e)}
+      />
 
-      <Select options={tagsOptions} label={'Tags'} />
+      <Select options={tagsOptions} label={'Tags'} handleOnChange={(e) => onSetFilter('tag', e)} />
 
-      <Select options={levelOptions} label={'Level'} />
-    </div>
+      <Select
+        options={levelOptions}
+        label={'Level'}
+        handleOnChange={(e) => onSetFilter('level', e)}
+      />
+    </>
   )
 }
