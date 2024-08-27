@@ -4,10 +4,10 @@ import { z } from 'zod'
 import { recipeCollectionSchema } from '@typings/models/recipe-collection.model'
 import intoError from '@utils/intoError'
 
-export async function getRecipes(name?: string) {
+export async function getRecipes(name?: string, level?: string, category?: string, tag?: string) {
   const recipeCollectionResponse = await ResultAsync.fromPromise(
     getContentfulClient()
-      .getRecipeCollection({ name })
+      .getRecipeCollection({ name, level, category, tag })
       .then((response) => {
         if (!response.recipeCollection || response.recipeCollection?.items?.length === 0) {
           return null

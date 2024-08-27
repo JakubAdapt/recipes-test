@@ -10,9 +10,10 @@ export default async function RecipesPage({
   searchParams: { [key: string]: string | undefined }
 }) {
   const page = await getPage('recipes')
-  const recipes = await getRecipes(searchParams.search)
+  const { search, level, category, tag } = searchParams
+  const recipes = await getRecipes(search, level, category, tag)
 
-  if (recipes.isErr() || !recipes.value) {
+  if (recipes.isErr()) {
     throw new Error('Failed to load recipes')
   }
 
@@ -28,7 +29,11 @@ export default async function RecipesPage({
 
       <FiltersContainer />
 
-      <RecipesList recipes={recipes.value} />
+      {!recipes.value ? (
+        <div className="text-center text-yellow">No recipes found</div>
+      ) : (
+        <RecipesList recipes={recipes.value} />
+      )}
     </div>
   )
 }

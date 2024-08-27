@@ -26,20 +26,33 @@ export const Filters = ({ categoryOptions, tagsOptions, levelOptions }: Props) =
     router.push(`${pathname}?${params.toString()}`)
   }
 
+  const getDefaultValue = (type: 'category' | 'tag' | 'level', options: SelectOption[]) => {
+    const value = searchParams.get(type)
+
+    return options.find((option) => option.value === value) || null
+  }
+
   return (
     <>
       <Select
         options={categoryOptions}
         label={'Category'}
         handleOnChange={(e) => onSetFilter('category', e)}
+        value={getDefaultValue('category', categoryOptions)}
       />
 
-      <Select options={tagsOptions} label={'Tags'} handleOnChange={(e) => onSetFilter('tag', e)} />
+      <Select
+        options={tagsOptions}
+        label={'Tags'}
+        handleOnChange={(e) => onSetFilter('tag', e)}
+        value={getDefaultValue('tag', tagsOptions)}
+      />
 
       <Select
         options={levelOptions}
         label={'Level'}
         handleOnChange={(e) => onSetFilter('level', e)}
+        value={getDefaultValue('level', levelOptions)}
       />
     </>
   )

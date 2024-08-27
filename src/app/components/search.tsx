@@ -1,7 +1,7 @@
 'use-client'
 
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/solid'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { FormEvent, useRef, useState } from 'react'
 import { useOnClickOutside } from 'usehooks-ts'
 
@@ -14,14 +14,34 @@ type Props = {
 const Search = ({ handleClickOutside }: Props) => {
   const ref = useRef(null)
   const router = useRouter()
-  const [text, setText] = useState('')
+  const searchParams = useSearchParams()
+  const [text, setText] = useState(searchParams.get('search') || '')
 
   useOnClickOutside(ref, (event) => handleClickOutside(event))
 
+  const handleParamsChange = (newText: string) => {
+    const params = new URLSearchParams(searchParams.toString())
+
+    if (newText) {
+      params.set('search', newText)
+    } else {
+      params.delete('search')
+    }
+
+    router.push(`/recipes?${params.toString()}`)
+  }
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    router.push(`/recipes?search=${text}`)
+    handleParamsChange(text)
   }
+
+  const handleClear = () => {
+    setText('')
+    handleParamsChange('')
+  }
+
+  // if recipes page useDebounce TODO
 
   return (
     <form className="relative" onSubmit={handleSubmit} ref={ref}>
@@ -36,7 +56,7 @@ const Search = ({ handleClickOutside }: Props) => {
       <MagnifyingGlassIcon width={20} className="absolute left-2 top-[14px]" fill="#747474" />
 
       <XMarkIcon
-        onClick={() => setText('')}
+        onClick={handleClear}
         width={24}
         className="absolute right-2 top-3 cursor-pointer"
         fill="#747474"
