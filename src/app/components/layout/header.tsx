@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
 import { MagnifyingGlassIcon, ArrowLeftIcon } from '@heroicons/react/24/solid'
-import Search, { ClickOutsideEvent } from '@app/components/molecules/search'
+import HeaderSearch, { ClickOutsideEvent } from '@app/components/molecules/header-search'
 import { useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
@@ -22,10 +22,17 @@ export const Header = () => {
     setIsSearchVisible(false)
   }
 
+  const handleNavigate = (params: string) => {
+    setIsSearchVisible(false)
+    router.push(`/recipes?${params.toString()}`)
+  }
+
   const variants = {
     hidden: { y: 0, opacity: 0 },
     visible: { y: 64, opacity: 1 },
   }
+
+  const enableHeaderSearch = pathname !== '/recipes'
 
   return (
     <div className="relative">
@@ -42,29 +49,38 @@ export const Header = () => {
           Home
         </Link>
 
-        <div ref={searchIconRef}>
-          <MagnifyingGlassIcon
-            className="h-6 w-6 cursor-pointer"
-            onClick={() => setIsSearchVisible((prev) => !prev)}
-            aria-label="search-icon"
-          />
-        </div>
+        {enableHeaderSearch ? (
+          <div ref={searchIconRef}>
+            <MagnifyingGlassIcon
+              className="h-6 w-6 cursor-pointer"
+              onClick={() => setIsSearchVisible((prev) => !prev)}
+              aria-label="search-icon"
+            />
+          </div>
+        ) : (
+          <div />
+        )}
       </header>
 
-      <AnimatePresence>
-        {isSearchVisible && (
-          <motion.div
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="fixed left-0 right-0 top-0 z-20"
-          >
-            <Search handleClickOutside={handleClickOutside} />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {enableHeaderSearch && (
+        <AnimatePresence>
+          {isSearchVisible && (
+            <motion.div
+              variants={variants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="fixed left-0 right-0 top-0 z-20"
+            >
+              <HeaderSearch
+                handleClickOutside={handleClickOutside}
+                handleNavigate={handleNavigate}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
     </div>
   )
 }

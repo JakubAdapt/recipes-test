@@ -24,16 +24,20 @@ export default async function RecipesPage({
   }
 
   return (
-    <div className="space-y-4 md:space-y-6">
+    <div>
       {hero && <Hero image={hero.image} heading={hero.heading} />}
 
-      <FiltersContainer />
+      <div className="mt-6 md:mt-8">
+        <FiltersContainer />
+      </div>
 
-      {!recipes.value ? (
-        <div className="text-center text-yellow">No recipes found</div>
-      ) : (
-        <RecipesList recipes={recipes.value} />
-      )}
+      <div className="mt-8 md:mt-10">
+        {!recipes.value ? (
+          <div className="text-center text-yellow">No recipes found</div>
+        ) : (
+          <RecipesList recipes={recipes.value} />
+        )}
+      </div>
     </div>
   )
 }

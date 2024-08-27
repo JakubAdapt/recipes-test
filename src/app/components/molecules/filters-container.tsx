@@ -31,9 +31,5 @@ export const FiltersContainer = async () => {
     { value: 'Hard', label: 'Hard' },
   ]
 
-  return (
-    <div className="items-baseline justify-between gap-3 space-y-4 px-4 sm:flex">
-      <Filters {...{ categoryOptions, tagsOptions, levelOptions }} />
-    </div>
-  )
+  return <Filters {...{ categoryOptions, tagsOptions, levelOptions }} />
 }

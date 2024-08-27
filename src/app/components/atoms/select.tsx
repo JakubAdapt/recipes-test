@@ -36,7 +36,7 @@ export const Select = ({ options, label, handleOnChange, value }: Props) => {
           Input: (props) => <components.Input {...props} aria-activedescendant={undefined} />,
         }}
         styles={{
-          control: (provided, state) => ({
+          control: (provided) => ({
             ...provided,
             width: '100%',
             backgroundColor: '#373A40', // TODO refactor colors

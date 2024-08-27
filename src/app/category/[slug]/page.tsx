@@ -8,7 +8,7 @@ export default async function CategoryPage({ params }: PageParams) {
   const categories = await getCategories(params.slug)
   const recipes = await getRecipesByCategory(params.slug)
 
-  if (recipes.isErr() || !recipes.value) {
+  if (recipes.isErr()) {
     throw new Error('Failed to load recipes')
   }
 
@@ -25,7 +25,11 @@ export default async function CategoryPage({ params }: PageParams) {
     <div className="space-y-4 md:space-y-6">
       {hero && <Hero image={hero.image} heading={hero.heading} />}
 
-      <RecipesList recipes={recipes.value} />
+      {!recipes.value ? (
+        <div className="text-center text-yellow">No recipes found</div>
+      ) : (
+        <RecipesList recipes={recipes.value} />
+      )}
     </div>
   )
 }
