@@ -1,4 +1,4 @@
-import RecipeCard from '@app/components/recipe-card'
+import RecipeCard from '@app/components/molecules/recipe-card'
 import { RecipeCollectionType } from '@typings/models/recipe-collection.model'
 
 type Props = {

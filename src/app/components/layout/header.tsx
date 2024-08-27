@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
 import { MagnifyingGlassIcon, ArrowLeftIcon } from '@heroicons/react/24/solid'
-import Search, { ClickOutsideEvent } from '@app/components/search'
+import Search, { ClickOutsideEvent } from '@app/components/molecules/search'
 import { useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 

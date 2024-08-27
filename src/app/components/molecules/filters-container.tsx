@@ -1,7 +1,7 @@
 import { getCategories } from '@services/getCategories'
 import { getTags } from '@services/getTags'
-import { SelectOption } from '@app/components/select'
-import { Filters } from '@app/components/filters'
+import { SelectOption } from '@app/components/atoms/select'
+import { Filters } from '@app/components/molecules/filters'
 
 export const FiltersContainer = async () => {
   const categories = await getCategories()

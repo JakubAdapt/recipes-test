@@ -1,7 +1,7 @@
-import CategoriesList from '@app/components/categories-list'
+import CategoriesList from '@app/components/lists/categories-list'
 import { getPage } from '@services/getPage'
-import Hero from '@app/components/hero'
-import Content from '@app/components/content'
+import Hero from '@app/components/molecules/hero'
+import Content from '@app/components/layout/content'
 
 export default async function Home() {
   const page = await getPage('home')

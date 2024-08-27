@@ -1,7 +1,7 @@
 'use client'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 
-import { Select, SelectOption } from '@app/components/select'
+import { Select, SelectOption } from '@app/components/atoms/select'
 
 type Props = {
   categoryOptions: SelectOption[]

@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import ContentfulImage from '@app/components/contentful-image'
-import { Time } from '@app/components/time'
-import { Level } from '@app/components/level'
+import ContentfulImage from '@app/components/atoms/contentful-image'
+import { Time } from '@app/components/atoms/time'
+import { Level } from '@app/components/atoms/level'
 import { RecipeCollectionType } from '@typings/models/recipe-collection.model'
 
 type Props = {

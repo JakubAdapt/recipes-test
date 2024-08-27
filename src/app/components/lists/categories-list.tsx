@@ -1,4 +1,4 @@
-import ContentfulImage from '@app/components/contentful-image'
+import ContentfulImage from '@app/components/atoms/contentful-image'
 import { getCategories } from '@services/getCategories'
 import Link from 'next/link'
 

@@ -1,9 +1,9 @@
-import ContentfulImage from '@app/components/contentful-image'
+import ContentfulImage from '@app/components/atoms/contentful-image'
 import { PageParams } from '@typings/PageParams'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { getRecipe } from '@services/getRecipe'
-import { Level } from '@app/components/level'
-import { Time } from '@app/components/time'
+import { Level } from '@app/components/atoms/level'
+import { Time } from '@app/components/atoms/time'
 
 export default async function RecipePage({ params }: PageParams) {
   const recipe = await getRecipe(params.slug)

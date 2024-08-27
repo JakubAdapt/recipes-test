@@ -1,8 +1,8 @@
-import Hero from '@app/components/hero'
+import Hero from '@app/components/molecules/hero'
 import { getPage } from '@services/getPage'
 import { getRecipes } from '@services/getRecipes'
-import RecipesList from '@app/components/recipes-list'
-import { FiltersContainer } from '@app/components/filters-container'
+import RecipesList from '@app/components/lists/recipes-list'
+import { FiltersContainer } from '@app/components/molecules/filters-container'
 
 export default async function RecipesPage({
   searchParams,

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Rubik, Permanent_Marker, MedievalSharp } from 'next/font/google'
 import './globals.css'
-import { Header } from '@app/components/header'
+import { Header } from '@app/components/layout/header'
 import clsx from 'clsx'
 
 const rubik = Rubik({

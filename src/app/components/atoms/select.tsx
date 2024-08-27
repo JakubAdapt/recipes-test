@@ -67,8 +67,10 @@ export const Select = ({ options, label, handleOnChange, value }: Props) => {
           }),
           option: (provided, state) => ({
             ...provided,
-            backgroundColor: '#373A40',
-            color: state.isSelected || state.isFocused ? 'white' : '#686D76',
+            color: 'white',
+            backgroundColor: state.isSelected || state.isFocused ? '#747474' : '#373A40',
+            fontWeight: state.isSelected ? 'bold' : 'normal',
+            cursor: 'pointer',
           }),
           indicatorSeparator: (provided) => ({
             ...provided,
