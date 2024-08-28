@@ -14,16 +14,17 @@ This website serves as a digital cookbook, allowing me to keep all my cherished 
 
 - Recipe browsing
 - Search functionality
-- Filter recipes by: category, difficulty, preparation time
+- Filter recipes by: category, difficulty, tag
 - Content management using Contentful CMS
 
 ## Technical Stack
 
 - Next.js
+- Typescript
 - Tailwindcss
 - Contentful
 - GraphQL
-- Cypress
+- Cypress (E2E and Component Testing)
 
 ## Getting Started
 
@@ -33,7 +34,7 @@ Install dependencies:
 npm install
 ```
 
-Build project and fetch Contentful types:
+Build project and generate GraphQL types:
 
 ```bash
 npm run build
@@ -43,6 +44,12 @@ Run the development server:
 
 ```bash
 npm run dev
+```
+
+Run production build:
+
+```bash
+npm run start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
