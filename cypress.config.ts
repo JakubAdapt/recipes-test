@@ -1,6 +1,14 @@
 import { defineConfig } from 'cypress'
 
 export default defineConfig({
+  component: {
+    devServer: {
+      framework: 'next',
+      bundler: 'webpack',
+    },
+    screenshotOnRunFailure: false,
+    specPattern: 'src/**/*.cy.{ts,tsx}',
+  },
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here

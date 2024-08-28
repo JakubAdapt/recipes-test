@@ -7,7 +7,7 @@ type Props = {
   variant?: 'primary' | 'link'
 }
 
-const Button = ({ label, link, variant = 'primary' }: Props) => {
+export const Button = ({ label, link, variant = 'primary' }: Props) => {
   const buttonTag = (
     <button
       className={clsx('w-full rounded px-4 py-2', {
@@ -29,5 +29,3 @@ const Button = ({ label, link, variant = 'primary' }: Props) => {
 
   return buttonTag
 }
-
-export default Button

@@ -26,8 +26,8 @@ for (const viewport of viewports) {
       cy.findByPlaceholderText(/Search recipes.../i).should('not.exist')
     })
 
-    it('can click "Show all recipes" button and navigate to Recipes Page', () => {
-      cy.findByRole('button', { name: /Show all recipes/i }).click() // replace to mock later
+    it('can click "Browse recipes" button and navigate to Recipes Page', () => {
+      cy.findByRole('button', { name: /Browse recipes/i }).click() // replace to mock later
       cy.url().should('include', '/recipes')
     })
   })
