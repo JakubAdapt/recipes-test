@@ -3,13 +3,16 @@ import ContentfulImage from '@app/components/atoms/contentful-image'
 import { Time } from '@app/components/atoms/time'
 import { Level } from '@app/components/atoms/level'
 import { RecipeCollectionType } from '@typings/models/recipe-collection.model'
+import { PercentBadgeIcon } from '@heroicons/react/24/outline'
 
 type Props = {
   data: RecipeCollectionType
 }
 
 const RecipeCard = ({ data }: Props) => {
-  const { image, name, level, time, slug } = data
+  const { image, name, level, time, slug, tags } = data
+
+  const isCheap = tags?.some((tag) => tag.name === 'Cheap')
 
   return (
     <Link href={`/recipes/${slug}`} className="block h-56">
@@ -26,6 +29,12 @@ const RecipeCard = ({ data }: Props) => {
             {level && <Level level={level} isWhite />}
           </div>
         </div>
+
+        {isCheap && (
+          <div className="absolute right-2 top-2">
+            <PercentBadgeIcon width={30} fill={'#FF652F'} />
+          </div>
+        )}
       </div>
     </Link>
   )

@@ -6,4 +6,9 @@ fragment RecipeCollection on Recipe {
   image {
     ...Image
   }
+  tagsCollection {
+    items {
+      ...Tag
+    }
+  }
 }

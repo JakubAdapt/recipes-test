@@ -12,7 +12,15 @@ export async function getRecipe(slug: string) {
         if (!response.recipeCollection || response.recipeCollection?.items?.length === 0) {
           return null
         }
-        return z.array(recipeSchema).parse(response.recipeCollection?.items)
+
+        const recipeItems = response.recipeCollection.items.map((recipeItem) => {
+          return {
+            ...recipeItem,
+            tags: recipeItem?.tagsCollection?.items,
+          }
+        })
+
+        return z.array(recipeSchema).parse(recipeItems)
       }),
     (error) => intoError(error, 'Recipe not found')
   )

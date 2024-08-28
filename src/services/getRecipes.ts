@@ -12,7 +12,15 @@ export async function getRecipes(name?: string, level?: string, category?: strin
         if (!response.recipeCollection || response.recipeCollection?.items?.length === 0) {
           return null
         }
-        return z.array(recipeCollectionSchema).parse(response.recipeCollection?.items)
+
+        const recipeItems = response.recipeCollection.items.map((recipeItem) => {
+          return {
+            ...recipeItem,
+            tags: recipeItem?.tagsCollection?.items,
+          }
+        })
+
+        return z.array(recipeCollectionSchema).parse(recipeItems)
       }),
     (error) => intoError(error, 'Failed to get recipe collection')
   )
