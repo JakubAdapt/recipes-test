@@ -8,13 +8,18 @@ for (const viewport of viewports) {
     })
 
     it('should display header links', () => {
-      cy.findByRole('link', { name: /Home/i }).should('be.visible').and('have.attr', 'href', '/')
-      cy.findByRole('link', { name: /Recipes/i })
+      const homeLink = cy
+        .findByRole('link', { name: /Home/i })
         .should('be.visible')
-        .and('have.attr', 'href', '/recipes')
-      cy.findByRole('link', { name: /About/i })
-        .should('be.visible')
-        .and('have.attr', 'href', '/about')
+        .and('have.attr', 'href', '/')
+      homeLink.parent().within(() => {
+        cy.findByRole('link', { name: /Recipes/i })
+          .should('be.visible')
+          .and('have.attr', 'href', '/recipes')
+        cy.findByRole('link', { name: /About/i })
+          .should('be.visible')
+          .and('have.attr', 'href', '/about')
+      })
     })
 
     it('should display title', () => {
