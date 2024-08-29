@@ -1,4 +1,4 @@
-# Recipes Website - hobby project
+# Cook Me - hobby project
 
 A personal web project to store and browse my favorite recipes.
 

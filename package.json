@@ -1,9 +1,9 @@
 {
-  "name": "recipes-app",
+  "name": "cook-me",
   "version": "0.1.0",
   "private": true,
   "author": {
-    "name": "Jakub Wolal",
+    "name": "Jakub Wolak",
     "email": "kuba.wolak@gmail.com"
   },
   "scripts": {
