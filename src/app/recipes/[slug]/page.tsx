@@ -36,8 +36,18 @@ export default async function RecipePage({ params }: PageParams) {
           </div>
 
           <p className="flex justify-between font-semibold">
-            {level && <Level level={level} />}
-            {time && <Time time={time} />}
+            {level && (
+              <div>
+                <div className="text-xs uppercase text-blue-gray-dark">Level:</div>
+                <Level level={level} />
+              </div>
+            )}
+            {time && (
+              <div>
+                <div className="text-xs uppercase text-blue-gray-dark">Time:</div>
+                <Time time={time} />
+              </div>
+            )}
           </p>
 
           <div className="contentful-document">{documentToReactComponents(ingredients.json)}</div>

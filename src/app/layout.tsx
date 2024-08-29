@@ -53,7 +53,7 @@ export default function RootLayout({
         )}
       >
         <Header />
-        <main className="mx-auto mb-4 mt-12 max-w-5xl">{children}</main>
+        <main className="mx-auto mb-4 mt-12 max-w-4xl">{children}</main>
       </body>
     </html>
   )
