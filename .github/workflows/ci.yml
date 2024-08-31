@@ -32,7 +32,8 @@ jobs:
         with:
           path: |
             **/node_modules
-          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+            ~/.cache/Cypress
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}-cypress-${{ hashFiles('**/package.json') }}
 
       - name: Install NPM dependencies 📦
         if: steps.npm-cache.outputs.cache-hit != 'true'
@@ -65,13 +66,17 @@ jobs:
         with:
           path: |
             **/node_modules
-          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+            ~/.cache/Cypress
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}-cypress-${{ hashFiles('**/package.json') }}
 
       - name: Download build artifacts 📥
         uses: actions/download-artifact@v4
         with:
           name: build
           path: .next
+
+      - name: Verify Cypress 🔍
+        run: npx cypress verify
 
       - name: Run E2E tests 🌳
         uses: cypress-io/github-action@v6
