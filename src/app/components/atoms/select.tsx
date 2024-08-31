@@ -38,6 +38,9 @@ export const Select = ({ options, label, handleOnChange, value }: Props) => {
       backgroundColor: state.isFocused
         ? 'hsl(var(--color-gray))'
         : 'hsl(var(--color-blue-gray-dark))',
+      '&:hover': {
+        backgroundColor: 'hsl(var(--color-gray))',
+      },
       color: state.isSelected ? 'hsl(var(--color-orange))' : 'hsl(var(--color-white))',
       cursor: 'pointer',
       fontWeight: state.isSelected ? '600' : 'normal',
